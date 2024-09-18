@@ -112,6 +112,9 @@ Ist nur eine der Aussagen falsch, so ist auch die Verknüpfung falsch. Die Verkn
 
 ... sind also alle falsch.
 
+
+<div class="alert alert-yellow">
+
 Welche dieser Aussagen sind wahr?
 ---------------------------------
 
@@ -119,6 +122,8 @@ Welche dieser Aussagen sind wahr?
 - [[ ]] Berlin liegt in Deutschland **und** Berlin liegt in England
 - [[X]] Berlin liegt in Deutschland **und** Berlin liegt in Deutschland
 - [[ ]] Berlin liegt in Deutschland **und** (**nicht** Paris liegt in Frankreich)
+
+</div>
 
 ## die ODER-Verknüpfung
 
@@ -139,6 +144,8 @@ Sagt man Beispielsweise *"Ich möchte ein blaues oder grünes Fahrrad kaufen"* s
 
 </div>
 
+<div class="alert alert-yellow">
+
 Welche dieser Aussagen sind wahr?
 ---------------------------------
 
@@ -147,7 +154,7 @@ Welche dieser Aussagen sind wahr?
 - [[X]] Berlin liegt in Deutschland **oder** Berlin liegt in Deutschland
 - [[ ]] (**nicht** Berlin liegt in Deutschland) **oder** **nicht** Paris liegt in Frankreich
 
-
+</div>
 
 ## Die WENN-DANN-Verknüpfung
 
@@ -332,7 +339,7 @@ ODER ist wahr wenn mindestens eine Variable wahr ist.
 </div>
 
 ### WENN-DANN
-Die WENN-DANN-Verknüpfung haben wir ja bereits beschrieben. Wenn die erste Aussage wahr ist, so muss auch die zweite Aussage wahr sein.
+Die WENN-DANN-Verknüpfung haben wir bereits beschrieben: Wenn die erste Aussage wahr ist, so muss auch die zweite Aussage wahr sein. Ist die erste Aussage nicht wahr, so ist die Verknüpfung unabhängig vom Wahrheitswert der zweiten Aussage wahr:
 
 <!-- data-type="none" class="w-30"-->
 | $A$  |  $B$ | $A \rightarrow B$ |
