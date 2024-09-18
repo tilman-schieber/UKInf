@@ -1,0 +1,145 @@
+/* main.css */
+
+
+.w-50 {
+  width: 50%;
+}
+
+.w-75 {
+  width: 75%;
+}
+
+.w-30 {
+  width: 30%;
+}
+
+kbd {
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+}
+
+div.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+}
+
+div.center > * {
+  max-width: 600px; /* Sets the maximum width of the child elements */
+  width: 100%; /* Ensures the child elements take up the full available width up to the max-width */
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+
+.flex-container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* Allows the items to wrap as needed */
+  align-items: stretch;
+  gap: 20px; /* Adds both horizontal and vertical spacing between items */
+}
+
+.flex-child { 
+  flex: 1;
+}
+
+@media (max-width: 600px) {
+  .flex-child {
+      flex: 100%; /* Makes the child divs take up the full width on slim devices */
+      margin-right: 0; /* Removes the right margin */
+  }
+}
+
+p.lead {
+  font-size: 1.3em;
+}
+
+.alert {
+  --bs-alert-bg: transparent;
+  --bs-alert-color: inherit;
+  --bs-alert-border-color: transparent;
+  --bs-alert-border: 1px solid var(--bs-alert-border-color);
+  position: relative;
+  padding: 1em 1em;
+  margin-bottom: 1em;
+  color: rgb(var(--color-text));;
+  background-color: var(--bs-alert-bg);
+  border: var(--bs-alert-border);
+  border-radius: 0.25em;
+  max-width: 80em;
+}
+
+.alert>.lia-divider {
+  background-color: var(--bs-alert-border-color) !important;
+  height: 2px !important;
+}
+
+  
+.alert .lia-list--unordered>li:before {
+  color: var(--bs-alert-color) !important;
+}
+
+.alert .lia-list--ordered>li::marker {
+  color: var(--bs-alert-color);
+}
+
+
+.alert-green {
+  --bs-alert-color: rgb(15, 81, 50);
+  --bs-alert-bg: rgb(209, 231, 221);
+  --bs-alert-border-color: rgb(186, 219, 204);
+}
+
+.alert-blue {
+  --bs-alert-color: #084298;
+  --bs-alert-bg: #cfe2ff;
+  --bs-alert-border-color:#b6d4fe;
+}
+
+
+.alert-yellow {
+  --bs-alert-color:#664d03;
+  --bs-alert-bg: #fff3cd;
+  --bs-alert-border-color: #ffecb5 ;
+}
+
+.alert-red {
+  --bs-alert-color:#842029;
+  --bs-alert-bg: #f8d7da;
+  --bs-alert-border-color: #f5c2c7;
+}
+
+.alert-teal {
+  --bs-alert-color: #055160;
+  --bs-alert-bg:  #cff4fc;
+  --bs-alert-border-color: #b6effb;
+}
+
+.alert-gray {
+  --bs-alert-color: #41464b;
+  --bs-alert-bg:  #e2e3e5;
+  --bs-alert-border-color: #d3d6d8;
+}
+
+/* MERMAID: change colors of flowcharts */
+#graphDiv_6_0 .node rect, #graphDiv_6_0 .node circle, #graphDiv_6_0 .node ellipse, #graphDiv_6_0 .node polygon, #graphDiv_6_0 .node path {
+  fill: #cfe2ff !important;
+  stroke: #084298 !important;
+
+}
+#graphDiv_6_0 .edgeLabel {
+  background-color: #cfe2ff !important;
+}
+
+/* ACE EDITOR: hide cursor when defocused */
+.ace_hidden-cursors .ace_cursor {
+  opacity: 0 !important;
+}
+
+
+/* ACE EDITOR: hide print margin */
+.ace-dreamweaver .ace_print-margin {
+  display: none !important;
+}
+
