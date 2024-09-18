@@ -44,6 +44,14 @@ div.center > * {
   flex: 1;
 }
 
+.flex-child-2 { 
+  flex: 2;
+}
+
+.flex-child-3 { 
+  flex: 3;
+}
+
 @media (max-width: 600px) {
   .flex-child {
       flex: 100%; /* Makes the child divs take up the full width on slim devices */

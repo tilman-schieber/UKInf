@@ -34,12 +34,34 @@ table {
 
 
 # Aussagenlogik
+
+
+<div class="flex-container">
+<div class="flex-child">
+
+![Wittgenstein](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Ludwig_Wittgenstein.jpg/493px-Ludwig_Wittgenstein.jpg "Ludwig Wittgenstein")
+
+</div>
+
+<div class="flex-child-3">
+
+> "Alles was überhaupt gedacht werden kann, kann klar gedacht werden. Alles was sich aussprechen lässt, lässt sich klar aussprechen."
+>
+> -- Ludwig Wittgenstein[^1]
+
+</div>
+
+</div>
+
+[^1]: Ludwig Wittgenstein, [Tractatus logico-philosophicus](https://de.wikipedia.org/wiki/Tractatus_logico-philosophicus), 4.116
+
 ## Was ist die Aussagenlogik?
 Die Aussagenlogik ist ein Teilgebiet der Logik, das sich mit der Verknüpfung von Aussagen beschäftigt.
 Eine Aussage ist ein Satz, der wahr oder falsch sein kann.
 
 So ist Beispielsweise der Satz "Es regnet." eine Aussage, da er entweder wahr oder falsch ist.[^1]
 
+<div class="alert alert-yellow">
 
 Was ist eine Aussage?
 ---------------------
@@ -54,6 +76,8 @@ Was ist eine Aussage?
 ****************************************************
 Fragen, Aufforderungen, Meinungsäußerungen sind keine Aussagen, da ihnen nicht eindeutig ein Wahrheitswert zugeordnet werden kann.
 ****************************************************
+
+</div>
 
 Diese einfachen Aussagen können nun verknüpft werden um neue Aussagen zu bilden.
 
@@ -146,6 +170,9 @@ Wenn die Straße nass ist, muss es nicht geregnet haben. Die Straße kann auch n
 
 </div>
 
+
+<div class="alert alert-yellow">
+
 Übung
 -----
 Sie wissen diese Aussage ist wahr:\
@@ -161,6 +188,7 @@ Die zweite Aussage ist falsch, vielleicht sind Sie ja ein Naturtalent und erreic
 Die dritte Aussage ist ebenfalls falsch, vielleicht haben Sie ja an einem Tag besonders viel gelernt und erreichen deshalb trotzdem volle Punktzahl.
 ******************************************
 
+</div>
 
 ## Notation
 Die Logik befasst sich als Teilgebiet der Mathematik üblicherweise nicht mit umgangssprachlichen Aussagen.
