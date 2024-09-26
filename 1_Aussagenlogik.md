@@ -60,7 +60,7 @@ Eine Aussage ist ein Satz, der wahr oder falsch sein kann.
 
 So ist Beispielsweise der Satz "Es regnet." eine Aussage, da er entweder wahr oder falsch ist.[^1]
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Was ist eine Aussage?
 ---------------------
@@ -112,7 +112,7 @@ Ist nur eine der Aussagen falsch, so ist auch die Verknüpfung falsch. Die Verkn
 ... sind also alle falsch.
 
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Welche dieser Aussagen sind wahr?
 ---------------------------------
@@ -133,7 +133,7 @@ Die ODER-Verknüpfung (oder *Disjunktion*) ist eine Verknüpfung von zwei Aussag
 - ~Berlin liegt in England~ **oder** ~~London liegt in England~~ ist wahr
 - ~Berlin liegt in England~ **oder** ~London liegt in Deutschland~  ist falsch
 
-<div class="alert alert-red">
+<div class="alert warning">
 
 Vorsicht:
 ---------
@@ -143,7 +143,7 @@ Sagt man Beispielsweise *"Ich möchte ein blaues oder grünes Fahrrad kaufen"* s
 
 </div>
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Welche dieser Aussagen sind wahr?
 ---------------------------------
@@ -167,7 +167,7 @@ Ist sie nicht nass, obwohl es regnet, so ist die Verknüpfung ebenfalls falsch.\
 Wenn es nicht regnet, so ist die Verknüpfung unabhängig vom Zustand der Straße wahr.\
 
 
-<div class="alert alert-red">
+<div class="alert warning">
 
 Vorsicht:
 ---------
@@ -177,7 +177,7 @@ Wenn die Straße nass ist, muss es nicht geregnet haben. Die Straße kann auch n
 </div>
 
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Übung
 -----
@@ -216,7 +216,7 @@ Die WENN-DANN-Verknüpfung *"Wenn es regnet, dann ist die Straße nass"* wird al
 *"Wenn die Straße nicht nass ist, dann hat es nicht geregnet"* ist dann
 $$\lnot N \rightarrow \lnot R$$
 
-<div class="alert alert-red">
+<div class="alert warning">
 
 Vorsicht: Verwirrende Notation
 ------------------------------
@@ -234,7 +234,7 @@ So drücken je nach Notation $\neg (\neg A \land B)$ und $\overline{\overline{A}
 
 ### Übungen
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Übung 1
 -------
@@ -258,7 +258,7 @@ Drücken Sie die folgenden Aussagen in der Aussagenlogik aus:
 
 </div>
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Übung 2
 -------
@@ -273,7 +273,7 @@ Welche der folgenden Aussagen sind wahr?
 
 </div>
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Übung 3
 -------
@@ -317,7 +317,7 @@ Die Wahrheitstabelle für die UND-Verknüpfung hat vier Zeilen, da es vier mögl
 ### ODER (Übung)
 
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Übung
 -----
@@ -349,7 +349,7 @@ Die WENN-DANN-Verknüpfung haben wir bereits beschrieben: Wenn die erste Aussage
 |   1  | 1    | 1                 |
 
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Übung
 -----
@@ -391,7 +391,7 @@ Für diese Verknüpfung wird der Doppelpfeil $\leftrightarrow$ verwendet.
 |   1  | 0    | 0                 |
 |   1  | 1    | 1                 |
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Übung
 -----
@@ -411,7 +411,7 @@ Beweisen Sie das mit dieser Wahrheitstabelle:
 
 ## Vertiefung
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Aufgabe 1 ✍[^1]
 ------------
@@ -420,7 +420,7 @@ Beweisen Sie mit Wahrheitstabellen, dass $A \land B$ und  $\lnot (\lnot A \lor \
 
 </div>
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Aufgabe 2 ✍
 ------------
@@ -429,7 +429,7 @@ Beweisen Sie mit Wahrheitstabellen, dass $A \leftrightarrow B$ und  $(A \land B)
 
 </div>
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Aufgabe 3
 ---------

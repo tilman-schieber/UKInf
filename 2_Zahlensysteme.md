@@ -129,7 +129,7 @@ Um die Zahlen $120_3$ und $231_5$ ins Dezimalsystem umzurechnen, berechnen wir d
 
 Versuchen Sie es nun selbst:
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Welche dieser Zahlen stellen die Dezimalzahl 42 dar?
 ----------------------------------------------------
@@ -171,7 +171,7 @@ In diesem Rechner sehen wir, wie wir eine Binärzahl durch Addition der Zweierpo
 
 </div>
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Was ist wahr über Binärzahlen?
 -------------------------------
@@ -202,7 +202,7 @@ $$
 
 Probieren Sie es selbst:
 
-<div class="alert alert-yellow">
+<div class="alert exercise">
 
 Rechnen Sie $2A_{12}$ ins Dezimalsystem um
 -------------------------------------------
