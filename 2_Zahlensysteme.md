@@ -199,6 +199,8 @@ Was ist wahr über Binärzahlen?
 ### Binäre Addition
 
 ### Binärmeister 
+*Schalten Sie die gelben Bits um, bis sie die Zahl rechts darstellen*
+@[embed(style="height: 800px; width:100%; border: none")](html/2/binaermeister.html)
 
 
 ## Zahlensymbole
