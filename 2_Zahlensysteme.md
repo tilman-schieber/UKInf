@@ -66,13 +66,13 @@ Der Wert einer Zahl ist die Summe der Wertigkeiten aller ihrer Ziffern.
 
 <div class="flex-container">
 
-<div class="flex-child-2">
+<div class="flex-child" style="min-width:300px">
 
 ![142 im Dezimalsystem](img/2/dezimalsystem.png)
 
 </div>
 
-<div class="flex-child-3">
+<div class="flex-child my-4" style="min-width:300px">
 
 Bei der Zahl 142 steht
 
@@ -111,13 +111,13 @@ Um die Zahlen $120_3$ und $231_5$ ins Dezimalsystem umzurechnen, berechnen wir d
 
 <div class="flex-container">
 
-<div class="flex-child mx-5">
+<div class="flex-child mx-3" style="min-width:300px">
 
 ![Dreiersystem](img/2/dreiersystem.png)
 
 </div>
 
-<div class="flex-child mx-5">
+<div class="flex-child mx-3" style="min-width:300px">
 
 ![Fünfersystem](img/2/fuenfersystem.png)
 
@@ -165,7 +165,7 @@ Es funktioniert genau wie die anderen Positionssysteme mit einer Basis $b$.
 
 In diesem Rechner sehen wir, wie wir eine Binärzahl durch Addition der Zweierpotenzen in eine Dezimalzahl umrechnen können:
 
-<div class="center">
+<div class="center my-3">
 
 @[embed(style="height: 420px; width:420px; border: none")](html/2/binaerzahlen.html)
 
