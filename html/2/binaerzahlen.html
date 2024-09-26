@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <style>
+    :root {
+      box-sizing: border-box;
+      --akzentfarbe1: #00a0a2;
+      --akzentfarbe2: #e2b847;
+      font-family: sans-serif;
+      max-width: 420px;
+      max-height: 420px;
+    }
+
+    #wrapper {
+      padding: 10px 20px;
+      background-color: #f5f5f5;
+      border-radius: 10px;
+    }
+
+    .flex-container {  
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 1.1rem;
+      margin: 0.5rem;
+    }
+
+    #number button {
+      width: 2rem;
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+      font-family: monospace;
+    }
+
+    #number button:hover {
+      background: #cccccc;
+      border: 2px solid #ff4d84;
+    }
+
+    #explain {
+      position: relative;
+      border-color: transparent;
+      text-align: right;
+      margin: inherit;
+      font-size: 1.2rem;
+      line-height: 2rem;
+    }
+
+    #output {
+      font-size: 2rem;
+      border-color: transparent;
+      text-align: center;
+      background: var(--akzentfarbe2);
+      margin: inherit;
+      min-width: 2.5rem;
+      padding: 0.5rem ;
+      border-radius: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <div class="flex-container">
+      Die Binärzahl:&nbsp; &nbsp;
+      <div id="number"></div>
+      rechnen wir mit Hilfe<br>der Zweierpotenzen in eine<br>Dezimalzahl um:
+      <div id="explain" title="eine Summe von Potenzen der Basis"></div>
+      <div id="output"></div>
+    </div>
+  </div>
+
+  <script>
+    "use strict";
+
+    const output = document.getElementById("output");
+    const explain = document.getElementById("explain");
+    var number_buttons = [];
+    var number = 0;
+    const number_div = document.getElementById("number");
+
+    for (let i = 7; i >= 0; i--) {
+      let btn = document.createElement("button");
+      btn.innerHTML = "0";
+      btn.title = "2 hoch " + i;
+      btn.addEventListener('click', () => { toggle(i); });
+      number_buttons.push(btn);
+      number_div.appendChild(btn);
+    }
+    number_buttons = number_buttons.reverse();
+    toggle(0);
+
+    function toggle(pos) {
+      if (number_buttons[pos].innerHTML == "1") {
+        number_buttons[pos].innerHTML = "0";
+      } else {
+        number_buttons[pos].innerHTML = "1";
+      }
+      number = number ^ 2 ** pos;
+      explain.innerHTML = explainer(number); 
+      output.innerHTML = number;
+    }
+
+    function explainer(number) {
+      if (number == 0) return "0 =";
+      let coeff = Array.from(number.toString(2));
+      let exponent = coeff.length - 1;
+      var powers1 = [];
+      var powers2 = [];
+      for (let c of coeff) {
+        if (c != "0") {
+          powers2.push(2 ** exponent);
+          powers1.push(2 + "<sup>" + exponent + "</sup>");
+        }
+        exponent--;
+      }
+      return powers1.join(' + ') + " = <br>" + powers2.join(' + ') + " =";
+    }
+  </script>
+</body>
+</html>
