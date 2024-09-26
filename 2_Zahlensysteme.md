@@ -66,13 +66,11 @@ Der Wert einer Zahl ist die Summe der Wertigkeiten aller ihrer Ziffern.
 
 <div class="flex-container">
 
-<div class="flex-child" style="min-width:300px">
 
-![142 im Dezimalsystem](img/2/dezimalsystem.png)
+<div class="flex-child alert example" style="min-width:500px">
 
-</div>
-
-<div class="flex-child my-4" style="min-width:300px">
+Beispiel
+--------
 
 Bei der Zahl 142 steht
 
@@ -87,6 +85,14 @@ $$
 $$
 
 </div>
+
+<div class="flex-child" style="min-width:300px">
+
+![142 im Dezimalsystem](img/2/dezimalsystem.png)
+
+</div>
+
+
 </div>
 
 ## Positionssysteme 
@@ -162,6 +168,12 @@ Wie wir bereits wissen, arbeiten Computer digital und kennen meist nur zwei vers
 So haben wir nur zwei Symbole, $0$ und $1$ zur Verfügung, um Zahlen darzustellen.
 Dies ist das Binärsystem, also das Zahlensystem mit Basis 2. 
 Es funktioniert genau wie die anderen Positionssysteme mit einer Basis $b$.
+Wir befassen uns aber genauer mit ihm, da es für die Informatik von besonderer Bedeutung ist.
+
+
+### Binärzahlen lesen
+
+Man interpretiert Binärzahlen genau so wie alle anderen Positionssysteme. 
 
 In diesem Rechner sehen wir, wie wir eine Binärzahl durch Addition der Zweierpotenzen in eine Dezimalzahl umrechnen können:
 
@@ -183,6 +195,11 @@ Was ist wahr über Binärzahlen?
 - [[ ]] Alle Binärzahlen mit nur einer 1 sind gerade.
 
 </div>
+
+### Binäre Addition
+
+### Binärmeister 
+
 
 ## Zahlensymbole
 
