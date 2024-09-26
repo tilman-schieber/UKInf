@@ -1,17 +1,5 @@
 /* main.css */
-
-
-.w-50 {
-  width: 50%;
-}
-
-.w-75 {
-  width: 75%;
-}
-
-.w-30 {
-  width: 30%;
-}
+@import url(tools.css);
 
 kbd {
   font-size: 1.2rem;
@@ -26,18 +14,18 @@ div.center {
 }
 
 div.center > * {
-  max-width: 600px; /* Sets the maximum width of the child elements */
-  width: 100%; /* Ensures the child elements take up the full available width up to the max-width */
-  box-sizing: border-box; /* Ensures padding and border are included in the width */
+  max-width: 600px; 
+  width: 100%; 
+  box-sizing: border-box;
 }
 
 .flex-container {
   margin-top: 30px;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap; /* Allows the items to wrap as needed */
+  flex-wrap: wrap; 
   align-items: stretch;
-  gap: 20px; /* Adds both horizontal and vertical spacing between items */
+  gap: 20px; 
 }
 
 .flex-child { 
@@ -52,10 +40,14 @@ div.center > * {
   flex: 3;
 }
 
+.flex-child-4 { 
+  flex: 4;
+}
+
 @media (max-width: 600px) {
   .flex-child {
-      flex: 100%; /* Makes the child divs take up the full width on slim devices */
-      margin-right: 0; /* Removes the right margin */
+      flex: 100%; 
+      margin-right: 0; 
   }
 }
 
@@ -151,3 +143,7 @@ p.lead {
   display: none !important;
 }
 
+.lia-code--inline {
+  border-color: lightgray !important;
+  color: rgb(var(--color-text)) !important;
+}

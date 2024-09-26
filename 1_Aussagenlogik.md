@@ -1,14 +1,13 @@
 <!--
 author:   Tilman Schieber
 email:    tilman.schieber@tu-berlin.de
-version:  0.0.1
+version:  1.0.1
 date:     2024
 language: de
 narrator: Deutsch Female
 logo:     img/1/aussagenlogik.png
-icon:     img/TU_Logo_kurz.png
-comment:  Was bedeutet es einen Computer zu programmieren und 
-          wie lernt man es?
+icon:     img/TU_Logo_kurz.svg
+comment:  Eine Einführung in die Aussagenlogik als eine Grundlage der Informatik.
 link:     styles/main.css
 import:   ./macros.md
 
