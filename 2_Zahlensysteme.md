@@ -1,7 +1,7 @@
 <!--
 author:   Tilman Schieber
 email:    tilman.schieber@tu-berlin.de
-version:  1.0.3
+version:  1.0.4
 date:     2024
 language: de
 narrator: Deutsch Female
@@ -255,7 +255,7 @@ Eine schriftliche Addition mit Binärzahlen kann man so durchführen:
 -----
 
 Verwenden Sie den Rechner um $0111_2 + 0011_2$ zu addieren. \
-Was ist das Ergebnis als Binärzahl? [[ 1010 ]]\
+Was ist das Ergebnis als Binärzahl?[^1] [[ 1010 ]]\
 $0111_2$ ist dezimal: [[ 7 ]]\
 $0011_2$ ist dezimal: [[ 3 ]]\
 Die Summe der Binärzahlen ist also dezimal: [[ 10 ]]
@@ -271,6 +271,8 @@ Sie sehen das Ergebnis ist richtig. $7+3=10$.
 </div>
 
 </div>
+
+[^1]: Geben Sie das Ergebnis ohne führende Nullen ein. Das sind Nullen, die vor der ersten Eins stehen und nicht zum Wert der Zahl beitragen.
 
 #### Übungen: Binäre Addition
 
