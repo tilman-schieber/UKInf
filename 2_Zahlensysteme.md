@@ -10,6 +10,34 @@ icon:     img/TU_Logo_kurz.svg
 comment:  Positionssysteme, Binär-, Oktal- und Hexadezimalsystem 
 link:     styles/main.css
 import:   ./macros.md
+
+
+@style
+
+.katex {
+    font-size: 1.1em;
+}
+
+table {
+  --color-border: 160, 160, 160; 
+  }
+
+.lia-table__sort {
+  display: none
+  }
+
+.lia-table-responsive.has-thead-sticky.has-first-col-sticky .lia-table__head th:first-child {
+  position: unset;
+}
+
+.lia-table-responsive.has-first-col-sticky .lia-table__data:first-child {
+  position: unset;
+}
+
+
+
+@end
+
 -->
 
 # Zahlensysteme
@@ -175,7 +203,9 @@ Wir befassen uns aber genauer mit ihm, da es für die Informatik von besonderer 
 
 Man interpretiert Binärzahlen genau so wie alle anderen Positionssysteme. 
 
-In diesem Rechner sehen wir, wie wir eine Binärzahl durch Addition der Zweierpotenzen in eine Dezimalzahl umrechnen können:
+In diesem Rechner sehen Sie, wie man eine Binärzahl durch Addition der Zweierpotenzen in eine Dezimalzahl umrechnen kann.
+
+*klicken Sie auf die Bits um sie umzuschalten*
 
 <div class="center my-3">
 
@@ -197,11 +227,176 @@ Was ist wahr über Binärzahlen?
 </div>
 
 ### Binäre Addition
+Man kann man mit binären Zahlen genauso rechnen, wie man es vom Dezimalzahlen gewohnt ist. 
+Da es ja aber nur die Ziffern $0$ und $1$ gibt, ergibt schon $1+1=10$ einen Übertrag.
+
+Eine schriftliche Addition mit Binärzahlen kann man so durchführen:
+
+<div class="flex-container">
+<div class="flex-child-1 alert exercise">
+
+Übung
+-----
+
+Verwenden Sie den Rechner um $0111_2 + 0011_2$ zu addieren. \
+Was ist das Ergebnis als Binärzahl? [[ 1010 ]]\
+$0111_2$ ist dezimal: [[ 7 ]]\
+$0011_2$ ist dezimal: [[ 3 ]]\
+Die Summe der Binärzahlen ist also dezimal: [[ 10 ]]
+*************************
+Sie sehen das Ergebnis ist richtig. $7+3=10$.
+*************************
+
+</div>
+<div class="flex-child">
+
+@[embed(style="height: 320px; width:300px; border: none")](html/2/binaeraddition.html)
+
+</div>
+
+</div>
+
+#### Übungen: Binäre Addition
+
+> Hier können Sie selbst die binäre Addition üben.
+> Am besten lösen Sie die Aufgaben schriftlich und überprüfen es dann hier online. Wenn Sie geübter sind, können Sie die Aufgaben auch im Kopf lösen	
+> Geben Sie das Ergebnis stets ohne führende Nullen[^1] an.
+
+<div class="alert exercise">
+
+Addieren Sie die folgenden Binärzahlen:
+---------------------------------------
+
+a)
+---
+
+`00001111`\
+`01110101`
+
+<!-- style= "max-width: 16em; "-->
+[[10000100]]
+
+---
+
+b)
+---
+
+`01110001`\
+`01011010`
+
+<!-- style= "max-width: 16em"-->
+[[11001011]]
+
+
+---
+
+c)
+---
+
+
+`10101111`\
+`01001001`
+
+<!-- style= "max-width: 16em"-->
+[[11111000]]
+
+---
+
+d)
+---
+
+`01011000`\
+`00010011`
+
+<!-- style= "max-width: 16em"-->
+[[1101011]]
+
+---
+
+e)
+---
+
+`0100100100110111`\
+`1000000100110111`
+
+<!-- style= "max-width: 20em"-->
+[[1100101001101110]]
+
+
+---
+
+f)
+---
+
+`0010110101100010`\
+`0010111100001011`
+
+<!-- style= "max-width: 20em"-->
+[[101110001101101]]
+
+---
+
+[^1]: Führende Nullen sind Nullen, die vor der ersten Eins stehen. Wenn sie also als Ergebnis $0010$ erhalten, schreiben Sie einfach $10$.
+
+</div>
+
 
 ### Binärmeister 
-*Schalten Sie die gelben Bits um, bis sie die Zahl rechts darstellen*
+*Sobald Sie starten, erscheinen immer mehr gelbe Bits auf der linken Seite. Sie können die Bits mit Klicken umschalten, so dass Sie der Zahl rechts davon entsprechen. Sobald sie eine Zeile gelöst haben, verschwindet sie. Bei 8 ungelösten Zeilen haben sie verloren!*
 @[embed(style="height: 800px; width:100%; border: none")](html/2/binaermeister.html)
 
+
+## Oktal- und Hexadezimalsystem
+### Oktalzahlen und ihre Umwandlung in Binärzahlen
+
+Neben dem Binärsystem sind das Oktal- und insbesondere das Hexadezimalsystem wichtig für die Informatik. Der Grund dafür ist, dass Binärzahlen sich einfach in Oktal- oder Hexadezimalzahlen umwandeln lassen. So erlauben diese beiden Zahlensysteme Informatikern eine effiziente Darstellung digitaler Daten.
+
+Zunächst können wir am Oktalsystem sehen, wie leicht diese Umwandlung in beide Richtungen geht.
+So entspricht jede Ziffer im Oktalsystem genau drei Ziffern im Binärsystem:
+
+<!-- style="max-width:650px"-->
+```ascii
+
+Oktal |   0   |   1   |   2   |   3   |   4   |   5   |   6   |   7   
+------+-------+-------+-------+-------+-------+-------+-------+------ 
+Binär |  000  |  001  |  010  |  011  |  100  |  101  |  110  |  111  
+```
+
+
+<div class="alert example">
+
+Beispiel 1
+----------
+
+Die Binärzahl $100 001$ besteht aus den zwei Dreierblöcken $100$ und $001$, also $4$ und $1$, diese Zahl ist also oktal $41$.
+
+Bei der Umwandlung einer Binär- in eine Oktalzahl gehen wir von rechts nach links vor und ergänzen, falls nötig, links Nullen für den letzten Dreierblock.
+
+
+Beispiel 2
+----------
+
+
+Die Binärzahl $11001_2$ entspricht $011\;001_2$ und damit oktal $31_8$
+
+
+</div>
+
+
+<div class="alert tip">
+
+Oktal-zu-Binär-Rechner
+-----------------------
+
+> Geben Sie eine Oktalzahl ein und sehen Sie, wie sie in eine Binärzahl umgewandelt wird.
+
+@[embed(style="height: 190px; width:400px; border: none")](html/2/octal.html)
+
+</div>
+
+
+
+@[embed(style="height: 210px; width:600px; border: none")](html/2/hex.html)
 
 ## Zahlensymbole
 

@@ -25,8 +25,20 @@ s {
 
 table {
   --color-border: 160, 160, 160; 
-  
   }
+
+.lia-table__sort {
+  display: none
+  }
+
+.lia-table-responsive.has-thead-sticky.has-first-col-sticky .lia-table__head th:first-child {
+  position: unset;
+}
+
+.lia-table-responsive.has-first-col-sticky .lia-table__data:first-child {
+  position: unset;
+}
+
 
 @end
 -->
