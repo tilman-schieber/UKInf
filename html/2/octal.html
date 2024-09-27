@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oktal zu Binär</title>
+    <style>
+        :root {
+            font-family: monospace;
+            font-size: large;
+        }
+
+        body {
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            align-items: center; /* Center align vertically */
+            margin-bottom: 10px;
+        }
+
+        label {
+            font-family: monospace;
+            font-size: 1.2rem;
+            margin-right: 10px;
+            min-width: 60px; /* Ensures labels are aligned properly */
+        }
+
+        input[type="text"], .result {
+            font-family: monospace;
+            font-size: 1.4rem;
+        }
+
+        input[type="text"] {
+            width: 4em;
+            padding: 8px 15px; 
+            background-color: #f0f0f0;
+            border-width: 0px;
+            color: black;
+        }
+
+        #octalInput {
+            width: 3.3rem;
+        }
+
+        .result {
+            
+            border-width: 0px;
+            color: black;
+            white-space: pre-wrap;
+            height: 48px; 
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="octalInput">Oktal:</label>
+        <input type="text" id="octalInput" maxlength="4">
+    </div>
+    <div class="container">
+        <label for="binaryOutput">Binär:</label>
+        <div class="result" id="binaryOutput"></div>
+    </div>
+
+    <script>
+        function convertOctalToBinary(octalStr) {
+            return octalStr.split('').map(digit => parseInt(digit, 8).toString(2).padStart(3, '0')).join(' ');
+        }
+
+        document.getElementById('octalInput').addEventListener('input', function(event) {
+            let input = this.value;
+            let validInput = input.replace(/[^0-7]/g, '');  // Remove non-octal digits
+            if (input !== validInput) {
+                this.value = validInput;
+            }
+            document.getElementById('binaryOutput').innerText = convertOctalToBinary(validInput);
+        });
+    </script>
+</body>
+</html>

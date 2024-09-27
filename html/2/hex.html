@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexadezimal zu Binär</title>
+    <style>
+        :root {
+            font-family: monospace;
+            font-size: large;
+        }
+
+        body {
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column; 
+            margin-bottom: 20px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center; 
+            margin-bottom: 10px;
+        }
+
+        label {
+            font-family: monospace;
+            font-size: 1.2rem;
+            margin-right: 10px;
+            text-align: right;
+            width: 120px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        input[type="text"], .result {
+            font-family: monospace;
+            font-size: 1.4rem;
+            margin-right: 10px; 
+            margin-left: 0px;
+        }
+
+        input[type="text"] {
+            width: 3rem;
+            padding: 8px 15px; 
+            background-color: #f0f0f0;
+            border-width: 0px;
+            color: black;
+        }
+
+        #hexInput {
+            margin-left: 0px;
+        }
+
+        .result {
+            border-width: 0px;
+            color: black;
+            white-space: pre-wrap;
+            height: 48px; 
+            display: flex;
+            align-items: center;
+            width: 300px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <label for="hexInput">Hexadezimal:</label>
+            <input type="text" id="hexInput" maxlength="4">
+        </div>
+        <div class="row">
+            <label for="binaryOutput">Binär:</label>
+            <div class="result" id="binaryOutput"></div>
+        </div>
+    </div>
+
+    <script>
+        function convertHexToBinary(hexStr) {
+            return hexStr.split('').map(digit => parseInt(digit, 16).toString(2).padStart(4, '0')).join(' ');
+        }
+
+        document.getElementById('hexInput').addEventListener('input', function(event) {
+            let input = this.value.toUpperCase().slice(0, 4); 
+            let validInput = input.replace(/[^0-9A-F]/g, ''); 
+            if (input !== validInput) {
+                this.value = validInput;
+            } else {
+                this.value = input;
+            }
+            document.getElementById('binaryOutput').innerText = convertHexToBinary(validInput);
+        });
+    </script>
+</body>
+</html>
