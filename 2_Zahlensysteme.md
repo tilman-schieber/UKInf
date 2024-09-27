@@ -1,7 +1,7 @@
 <!--
 author:   Tilman Schieber
 email:    tilman.schieber@tu-berlin.de
-version:  1.0.2
+version:  1.0.3
 date:     2024
 language: de
 narrator: Deutsch Female
@@ -197,17 +197,17 @@ Wie wir bereits wissen, arbeiten Computer digital und kennen meist nur zwei vers
 1. keine elektrische Spannung liegt an, oder $0$ 
 2. elektrische Spannung liegt an, oder $1$
 
-So haben wir nur zwei Symbole, $0$ und $1$ zur Verfügung, um Zahlen darzustellen.
-Dies ist das Binärsystem, also das Zahlensystem mit Basis 2. 
-Es funktioniert genau wie die anderen Positionssysteme mit einer Basis $b$.
-Wir befassen uns aber genauer mit ihm, da es für die Informatik von besonderer Bedeutung ist.
+So haben wir nur zwei Symbole, $0$ und $1$ zur Verfügung, um alle digitalen Daten zu speichern und zu verarbeiten.
+Für die Darstellung von Zahlen bietet sich so für Computer das Binärsystem, also das Zahlensystem mit Basis 2, an.
+
+Es kennt nur die Ziffern $0$ und $1$ und kann so alle Zahlen darstellen, die wir im Dezimalsystem kennen.
 
 </div>
 
 <div class="flex-child">
 
 
-![Leibnitz](https://upload.wikimedia.org/wikipedia/commons/a/ac/Leibniz_binary_system_1703.png "Leibniz, *Explication de l'arithmétique binaire* (1703). ")
+![Leibnitz](https://upload.wikimedia.org/wikipedia/commons/a/ac/Leibniz_binary_system_1703.png "Leibniz, *Explication de l'arithmétique binaire* (1703).  Die erste Publikation über das Rechnen im Binärsystem.")
 
 
 </div>
@@ -363,9 +363,11 @@ f)
 
 
 ## Oktal- und Hexadezimalsystem
-### Oktalzahlen und ihre Umwandlung in Binärzahlen
 
-Neben dem Binärsystem sind das Oktal- und insbesondere das Hexadezimalsystem wichtig für die Informatik. Der Grund dafür ist, dass Binärzahlen sich einfach in Oktal- oder Hexadezimalzahlen umwandeln lassen. So erlauben diese beiden Zahlensysteme Informatikern eine effiziente Darstellung digitaler Daten.
+
+Neben dem Binärsystem sind das Oktal- und insbesondere das Hexadezimalsystem[^1] wichtig für die Informatik. Der Grund dafür ist, dass Binärzahlen sich einfach in Oktal- oder Hexadezimalzahlen umwandeln lassen. So erlauben diese beiden Zahlensysteme Informatikern eine effiziente Darstellung digitaler Daten.
+
+### Oktalzahlen 
 
 Zunächst können wir am Oktalsystem sehen, wie leicht diese Umwandlung in beide Richtungen geht.
 So entspricht jede Ziffer im Oktalsystem genau drei Ziffern im Binärsystem:
@@ -410,3 +412,4 @@ Oktal-zu-Binär-Rechner
 
 </div>
 
+[^1]: Das ist das Zahlensystem, mit der Basis 16.
