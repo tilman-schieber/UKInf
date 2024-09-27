@@ -1,2 +1,2 @@
-# OKInf
- Oberkurs Informatik 2024
+# UKInf
+ Unterkurs Informatik 2024

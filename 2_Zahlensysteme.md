@@ -1,7 +1,7 @@
 <!--
 author:   Tilman Schieber
 email:    tilman.schieber@tu-berlin.de
-version:  1.0.1
+version:  1.0.2
 date:     2024
 language: de
 narrator: Deutsch Female
@@ -188,6 +188,10 @@ Welche dieser Zahlen stellen die Dezimalzahl 42 dar?
 
 ## Binärsystem
 
+
+<div class="flex-container">
+
+<div class="flex-child">
 Wie wir bereits wissen, arbeiten Computer digital und kennen meist nur zwei verschiedene Zustände: 
 
 1. keine elektrische Spannung liegt an, oder $0$ 
@@ -198,6 +202,18 @@ Dies ist das Binärsystem, also das Zahlensystem mit Basis 2.
 Es funktioniert genau wie die anderen Positionssysteme mit einer Basis $b$.
 Wir befassen uns aber genauer mit ihm, da es für die Informatik von besonderer Bedeutung ist.
 
+</div>
+
+<div class="flex-child">
+
+
+![Leibnitz](https://upload.wikimedia.org/wikipedia/commons/a/ac/Leibniz_binary_system_1703.png "Leibniz, *Explication de l'arithmétique binaire* (1703). ")
+
+
+</div>
+
+
+</div>
 
 ### Binärzahlen lesen
 
@@ -393,46 +409,4 @@ Oktal-zu-Binär-Rechner
 @[embed(style="height: 190px; width:400px; border: none")](html/2/octal.html)
 
 </div>
-
-
-
-@[embed(style="height: 210px; width:600px; border: none")](html/2/hex.html)
-
-## Zahlensymbole
-
-Für alle Positionssysteme mit einer Basis $b\leq10$ benutzt man die bekannten Ziffern 
-$$
-0,1,2,3,4,5,6,7,8,9
-$$. 
-
-Es gibt aber auch Zahlensysteme mit einer Basis größer als zehn. Dafür genügt dann unser normaler Ziffernvorrat nicht. 
-Wir können auf Buchstaben zurückgreifen, sodass wir zum Beispiel in einem Zwölfersystem den Buchstaben $\text{A}$ für $10$ und den Buchstaben $\text{B}$ für $11$ verwenden können. 
-
-$10_{12}$ liest man als $1\cdot 12^1 + 0 \cdot 12^0$ und steht dann für $12$. Wir zählen zur Basis Zwölf also folgendermaßen: 
-
-$$
-1,2,3,4,5,6,7,8,9,\text{A},\text{B},10,11,\ldots
-$$ 
-
-Probieren Sie es selbst:
-
-<div class="alert exercise">
-
-Rechnen Sie $2A_{12}$ ins Dezimalsystem um
--------------------------------------------
-
-[[34]]
-*************************
-
-Da $\text{A}$ im Zwölfersystem für $10$ steht, ergibt sich:
-$$2\text{A}_{12} = 2\cdot 12^1 + 10\cdot 12^0 = 24 + 10 = 34$$
-
-*************************
-</div>
-
-In der Informatik verwendet man auch das Sechzehnersystem, das auch Hexadezimalsystem genannt wird. Es verwendet zusätzlich zu den zehn Ziffern noch die sechs Buchstaben $$\text{A,B,C,D,E,F}$$ als zusätzliche Ziffern. So steht zum Beispiel  $\text{E}$ für 14.
-
-Für die platzsparende Kodierung von Daten verwenden Informatiker sogar ein System mit 64 verschiedenen Symbolen, das sogenannte *BASE64*-System.
-
-
 
