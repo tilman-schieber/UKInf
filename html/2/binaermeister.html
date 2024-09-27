@@ -69,12 +69,16 @@
 
         #scoreboard p {
             margin: 0;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
         }
 
         #punkte {
-            font-size: 48px;
+            margin-bottom: 1em;
+        }
+
+        #scoreboard .number {
+            font-size: 36px;
             font-weight: bold;
             margin-top: 10px;
         }
@@ -205,7 +209,9 @@
             <aside>
                 <div id="scoreboard">
                     <p>Punkte:</p>
-                    <span id="punkte">0</span>
+                    <span id="punkte" class="number">0</span>
+                    <p>Level:</p>
+                    <span id="level" class="number">0</span>
                 </div>
                 <button id="startButton">Start</button>
             </aside>
@@ -239,11 +245,11 @@
             }
 
             function generateTargetValue(level) {
-                const max = Math.min(255, Math.pow(2, level + 1) - 1);
+                const max = Math.min(255, Math.pow(2, level + 3) - 1);
 
-                // For levels > 4, there is a 25% chance to show the target as a hexadecimal number
+                // For levels > 4, there is a 20% chance to show the target as a hexadecimal number
                 let targetHex = false;
-                if (level > 4 && Math.random() < 0.25) {
+                if (level > 4 && Math.random() < 0.20) {
                     targetHex = true;
                     const hexValue = Math.floor(Math.random() * (256 - 10) + 10);
                     const targetValue = `0x${hexValue.toString(16).toUpperCase()}`;
@@ -260,7 +266,7 @@
                     const pow = Math.pow(2, i);
                     targets.add(pow);
                     if (level > 3) {
-                        targets.add(pow - 2);
+                        targets.add(pow - 1);
                     }
                     if (level > 3 && i < 8) {
                         targets.add(pow + 1);
@@ -306,7 +312,9 @@
                     bit.classList.add('bit', initialBits[i] === '1' ? 'bit-1' : 'bit-0');
                     bit.textContent = initialBits[i];
                     bit.addEventListener('click', () => toggleBit(bit, targetValue, targetData.isHex, line));
+                    bit.title= 2 ** (7-i)
                     bits.push(bit);
+
                     line.appendChild(bit);
                 }
 
@@ -355,9 +363,11 @@
 
 
                     updateContents("punkte", points);
+                    
                     if (solvedLines >= Math.pow(2, level) && level < 8) {
                         level++;
                     }
+                    updateContents("level", level);
                 }
             }
 
@@ -389,20 +399,22 @@
 
                 points = 0;
                 solvedLines = 0;
-                level = 3;
+                level = 1;
                 delay = 1000; // Reset delay
                 currentTargets.clear(); // Clear targets
                 gameRunning = true;
                 clearPlayingField();
                 updateContents("punkte", points);
-                addLine(2);
-                addLine(2);
+                updateContents("level", level);
+                addLine(1);
+                addLine(1);
+                
 
                 function gameLoop() {
                     if (!gameRunning) return;
                     addLine(level);
                     // Adjust delay as needed
-                    delay =  level * 500 + spielfeld.children.length * 250;
+                    delay =  500 + level * 500 + spielfeld.children.length * 300;
                     timer = setTimeout(gameLoop, delay);
                 }
 

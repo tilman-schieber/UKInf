@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+
+<head>
+	<title>Binäraddition</title>
+	<meta charset="UTF-8" />
+	<style>
+		:root {
+			box-sizing: border-box;
+			--akzentfarbe2: #e2b847;
+			--informatikfarbe: #774075;
+			max-width: 420px;
+			max-height: 420px;
+		}
+
+		*,
+		*:before,
+		*:after {
+			box-sizing: inherit;
+		}
+
+		body {
+			font-family: sans-serif;
+		}
+
+		#wrapper {
+			background-color: #f8f8f8;
+			border-radius: 20px;
+			padding: 10px 20px;
+			max-width: 300px;
+			margin: auto;
+		}
+
+		#addition-grid {
+			display: grid;
+			justify-content: center;
+			align-items: center;
+			grid-template-columns: repeat(5, 40px);
+			grid-template-rows: auto;
+		}
+
+		#addition-grid .line {
+			grid-column: span 5;
+		}
+
+		#addition-grid .carry {
+			min-height: 1.8rem;
+			background-color: transparent;
+			font-size: 1.3rem;
+			text-align: center;
+			font-family: monospace;
+		}
+
+		#addition-grid .sum {
+			background-color: var(--akzentfarbe2);
+			border: 2px solid #ffffff;
+			cursor: default;
+			outline: none;
+			margin-bottom: 1.8rem;
+			border-radius: 5px;
+			font-family: monospace;
+		}
+
+		#addition-grid hr {
+			border: 1px solid gray;
+		}
+
+		#addition-grid>button {
+			cursor: pointer;
+			position: relative;
+			font-size: 1.8rem;
+            border: 2px solid transparent;
+			margin-top: 0.5rem;
+			outline: none;
+			color: black;
+			padding: 0px;
+			width: 40px;
+			font-family: monospace;
+			font-weight: 500;
+            border-radius: 5px;
+		}
+ 
+
+		#addition-grid>.data:hover {
+			background: #ddd;
+			border: 2px solid #ff4d84;
+		}
+
+		p {
+			text-align: center;
+			font-size: 1rem;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="wrapper">
+		<p>Klicken Sie auf die Ziffern um<br>das Ergebnis zu verändern:</p>
+
+		<div id="addition-grid">
+		</div>
+		<script>
+			"use strict"
+			var carry_divs = ""
+			var a_buttons = ""
+			var b_buttons = ""
+			var sum_buttons = "<button class=\"sum\" id=\"sum4\">0</button>";
+
+			for (var i = 3; i >= 0; i--) {
+				a_buttons += "<button data-numbers class=\"data\" id=\"a" + i + "\">0</button>";
+				b_buttons += "<button data-numbers class=\"data\" id=\"b" + i + "\">0</button>";
+				sum_buttons += "<button class=\"sum\" id=\"sum" + i + "\">0</button>";
+				carry_divs += "<div class=\"carry\" id=\"c" + (i + 1) + "\"></div>";
+			}
+
+			document.getElementById("addition-grid").innerHTML = `
+<div></div>${a_buttons}
+<div></div>${b_buttons}
+${carry_divs}<div></div>
+<div class=line><hr /></div>
+${sum_buttons}
+`
+
+			function updateSum() {
+				for (let i = 0; i < 4; i++) {
+					var a = Number(document.getElementById("a" + i).textContent);
+					var b = Number(document.getElementById("b" + i).textContent);
+					var carry_in;
+					if (i > 0) carry_in = Number(document.getElementById("c" + i).textContent)
+					else carry_in = 0;
+					document.getElementById("sum" + i).textContent = (a ^ b) ^ carry_in;
+					var carry_out = (a & b) | ((a ^ b) & carry_in)
+					document.getElementById("c" + (i + 1)).textContent = carry_out ? "1" : "";
+				}
+				document.getElementById("sum4").textContent = carry_out
+			}
+
+			const numberButtons = document.querySelectorAll('[data-numbers]')
+			numberButtons.forEach(button => {
+				button.addEventListener('click', () => {
+					button.innerText = !Number(button.innerText) ? "1" : "0"
+					updateSum();
+				})
+			})
+		</script>
+	</div>
+
+</body>
+
+</html>
