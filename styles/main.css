@@ -20,12 +20,15 @@ div.center > * {
 }
 
 .flex-container {
-  margin-top: 30px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap; 
   align-items: stretch;
   gap: 20px; 
+}
+
+.align-center {
+  align-items: center;
 }
 
 .flex-child { 
@@ -53,12 +56,6 @@ div.center > * {
 
 p.lead {
   font-size: 1.3em;
-}
-
-
-span.katex {
-  font-size: 1.1em !important;
-  line-height: 1.1em !important;
 }
 
 .alert {
@@ -128,7 +125,9 @@ span.katex {
 .lia-quote {
   background: none;
   font-style: italic;
+  padding: 0rem 2rem;
 }
+
 
 /* MERMAID: change colors of flowcharts */
 #graphDiv_6_0 .node rect, #graphDiv_6_0 .node circle, #graphDiv_6_0 .node ellipse, #graphDiv_6_0 .node polygon, #graphDiv_6_0 .node path {
@@ -155,4 +154,3 @@ span.katex {
   border-color: lightgray !important;
   color: rgb(var(--color-text)) !important;
 }
-
