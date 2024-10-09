@@ -1,19 +1,19 @@
 <!--
 author:   Tilman Schieber
 email:    tilman.schieber@tu-berlin.de
-script:   https://cdn.jsdelivr.net/npm/asciinema-player@3.8.0/dist/bundle/asciinema-player.min.js
-link:     https://cdn.jsdelivr.net/npm/asciinema-player@3.8.0/dist/bundle/asciinema-player.min.css
 
-@asciinema: @asciinema_helper(@uid,``,@0)
 
-@asciinema2: @asciinema_helper(@uid,`@0`,@1)
+@pyconsole 
+<a target="_blank" role="button" href="https://tilman-schieber.github.io/console"><button class="lia-btn lia-btn--outline">Python Konsole</button></a>
+@end
 
-@asciinema_helper
-<div id="id_@0"></div>
-<script run-once modify="false">
-  var _=AsciinemaPlayer.create('@2', document.getElementById('id_@0'),{@1});
+
+@lialink
+<script modify="false" run-once="true">
+`LIASCRIPT: [@0](${window.location.origin + window.location.pathname}?@1)`
 </script>
 @end
+
 
 @embed
 <script run-once modify="false">
@@ -49,3 +49,15 @@ fetch("@1")
 -->
 
 # Macros
+
+## Lialink
+
+Example:
+
+`@[lialink(relative)](dir/french.md)`
+@[lialink(relative)](dir/french.md)
+
+
+## Embed
+
+`@[embed(style="height: 400px; width:600px; border: none")](html/5/listslicer.html)`
