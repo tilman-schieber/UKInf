@@ -186,6 +186,11 @@ Welche dieser Zahlen stellen die Dezimalzahl 42 dar?
 *************************
 </div>
 
+## In andere Zahlensysteme umrechnen
+
+@[embed(style="height: 450px; width:450px; border: none")](html/2/zahlensysteme.html)
+
+
 ## Binärsystem
 
 
@@ -364,10 +369,13 @@ f)
 @[embed(style="height: 800px; width:100%; border: none")](html/2/binaermeister.html)
 
 
+
 ## Oktal- und Hexadezimalsystem
 
 
 Neben dem Binärsystem sind das Oktal- und insbesondere das Hexadezimalsystem[^1] wichtig für die Informatik. Der Grund dafür ist, dass Binärzahlen sich einfach in Oktal- oder Hexadezimalzahlen umwandeln lassen. So erlauben diese beiden Zahlensysteme Informatikern eine effiziente Darstellung digitaler Daten.
+
+[^1]: Das ist das Zahlensystem, mit der Basis 16.
 
 ### Oktalzahlen 
 
@@ -388,14 +396,15 @@ Binär |  000  |  001  |  010  |  011  |  100  |  101  |  110  |  111
 Beispiel 1
 ----------
 
-Die Binärzahl $100 001$ besteht aus den zwei Dreierblöcken $100$ und $001$, also $4$ und $1$, diese Zahl ist also oktal $41$.
-
-Bei der Umwandlung einer Binär- in eine Oktalzahl gehen wir von rechts nach links vor und ergänzen, falls nötig, links Nullen für den letzten Dreierblock.
+Die Binärzahl $100001$ besteht aus den zwei Dreierblöcken $100$ und $001$, also $4$ und $1$, 
+diese Zahl ist also oktal $41$ (oder dezimal $33$).
 
 
 Beispiel 2
 ----------
 
+Bei der Umwandlung einer Binär- in eine Oktalzahl gehen wir von rechts nach links vor und ergänzen, 
+falls nötig, links Nullen für den letzten Dreierblock.
 
 Die Binärzahl $11001_2$ entspricht $011\;001_2$ und damit oktal $31_8$
 
@@ -414,4 +423,76 @@ Oktal-zu-Binär-Rechner
 
 </div>
 
-[^1]: Das ist das Zahlensystem, mit der Basis 16.
+### Zahlensymbole
+
+Für alle Positionssysteme mit einer Basis $b\leq10$ benutzt man die bekannten Ziffern 
+$$
+0,1,2,3,4,5,6,7,8,9
+$$. 
+
+Es gibt aber auch Zahlensysteme mit einer Basis größer als zehn. Dafür genügt dann unser normaler Ziffernvorrat nicht. 
+Wir können auf Buchstaben zurückgreifen, sodass wir zum Beispiel in einem Zwölfersystem den Buchstaben $\text{A}$ für $10$ und den Buchstaben $\text{B}$ für $11$ verwenden können. 
+
+$10_{12}$ liest man als $1\cdot 12^1 + 0 \cdot 12^0$ und steht dann für $12$. Wir zählen zur Basis Zwölf also folgendermaßen: 
+
+$$
+1,2,3,4,5,6,7,8,9,\text{A},\text{B},10,11,\ldots
+$$ 
+
+<div class="alert exercise">
+
+Übung
+-----
+
+Was ist der Wert der Zahl $2\text{A}_{12}$? (Basis 12)
+
+- [[ ]] 122
+- [[X]] 26
+- [[ ]] 210
+- [[ ]] 32
+***********************
+$$ 10 \cdot 12^1 + 2 \cdot 12^0 = 120 + 2 = 122 $$ 
+***********************
+
+</div>
+
+In der Informatik verwendet man auch das Sechzehnersystem, das auch Hexadezimalsystem genannt wird. Es verwendet zusätzlich zu den zehn Ziffern noch die sechs Buchstaben $$\text{A,B,C,D,E,F}$$ als zusätzliche Ziffern. So steht zum Beispiel  $\text{E}$ für 14.
+
+Für die platzsparende Kodierung von Daten verwenden Informatiker sogar ein System mit 64 verschiedenen Symbolen, das sogenannte *BASE64*-System.
+
+
+
+### Hexadezimalzahlen
+
+<!-- style="max-width:770px"-->
+```ascii
+
+Hexadezimal |    0   |    1   |    2   |    3   |    4   |    5   |    6   |    7   
+------------+--------+--------+--------+--------+--------+--------+--------+-------- 
+Binär       |  0000  |  0001  |  0010  |  0011  |  0100  |  0101  |  0110  |  0111  
+
+
+Hexadezimal |    8   |    9   |    A   |    B   |    C   |    D   |    E   |    F  
+------------+--------+--------+--------+--------+--------+--------+--------+-------- 
+Binär       |  1000  |  1001  |  1010  |  1011  |  1100  |  1101  |  1110  |  1111  
+
+```
+
+
+Beispiel
+--------
+
+Die Binärzahl $101011$ besteht aus den zwei Viererblöcken $0010$ und $1011$, also $2$ und $B$, 
+diese Zahl ist also hexadezimal $2\text{B}$ (oder dezimal $43$).
+
+
+<div class="alert tip">
+
+Hexadezimal-zu-Binär-Rechner
+----------------------------
+
+> Hier sehen Sie, wie eine Hexadezimalzahl in eine Binärzahl umgewandelt wird.
+
+@[embed(style="height: 190px; width:500px; border: none")](html/2/hex.html)
+
+</div>

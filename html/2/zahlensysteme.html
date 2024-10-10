@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Zahlensysteme</title>
+	<style>
+		:root {
+		  box-sizing: border-box;
+		  --akzentfarbe1: #00a0a2;
+		  --akzentfarbe2: #e2b847;
+		  --informatikfarbe: #774075;
+		  font-family: sans-serif;
+		  max-width: 450px;
+		  max-height: 450px;
+		}
+
+		#wrapper{
+			background-color: #f8f8f8;
+			border: solid #dcdcdc 4px;
+			border-radius: 20px;
+			padding: 10px 20px;	
+		}
+
+		.biginput {
+		  border-radius: 5px;
+		  text-align: center;
+		  background: whitesmoke;
+		  border: 2px solid darkgray;
+		  font-size: 1.5rem;
+		  margin: inherit;
+
+		}
+		.biginput:focus{
+		  outline: none;
+		  border-color: #ff4d84;
+		}
+
+		.flex-container{
+		  display: flex;
+		  flex-flow: row wrap;
+		  align-items: center;
+		  justify-content: center;
+		  font-size: 1rem;
+		  margin: 0.5rem;
+		}
+
+		.rest {
+		  font-family: monospace;
+		  background: var(--akzentfarbe2);
+		  display: inline-block;
+		  text-align: center;
+		  width: 1.5rem;
+		  height: 2rem;
+		  font-weight: 500;
+		  border-radius: 5px;
+		}
+
+		#number {
+		  width: 7rem;
+		}
+
+
+		#radix {
+		  width: 3rem;
+		}
+
+		#output {
+		  font-family: monospace;
+		  font-size: 1.4rem;
+		  font-weight: 500;
+		  border-color: transparent;
+		  border-radius: 5px;
+		  text-align: center;
+		  background: var(--akzentfarbe2);
+		  margin: inherit;
+		  padding: 0.2rem 0.5rem ;
+		}
+
+		#explain {
+		  font-size: 1.2rem;
+		  position: relative;
+		  border-color: transparent;
+		  text-align: right;
+		  background: transparent;
+		  padding: 0.2rem ;
+		  margin: inherit;
+		  line-height: 2.2rem;
+		  max-width: 30rem;
+		}
+
+	</style>
+  </head>
+<body>
+	<div id="wrapper">
+	  <div class="flex-container">
+		Die Zahl
+		  <input type="number" title="Das ist eine Zahl im Dezimalsystem" id="number" class="biginput" onTouch="select()" onKeyDown="if(this.value.length==4 && event.keyCode!=8) return false;" value="10">
+		  zur Basis
+		  <input type="number" title="Basis zu der wir die Zahl umwandeln wollen" class="biginput" min=2 max=16 onKeyDown="if(this.value.length==2 && event.keyCode!=8) return false;" id="radix" value="2">
+		  schreibt man
+		<div id="output"></div>,
+		denn
+		<div id="explain" title="eine Summe von Potenzen der Basis" onclick="toggle_powers()">
+		</div>
+	  </div>
+	</div>
+		<script>
+			"use strict";
+			const number = document.getElementById("number");
+			const radix = document.getElementById("radix");
+			const output = document.getElementById("output");
+			const explain = document.getElementById("explain");
+			var calc_powers = false;
+			var callout_on = true;
+
+			function toggle_powers() {
+			  calc_powers = !calc_powers;
+			  callout_on = false;
+			  update();
+			}
+
+			function update()
+			{
+			  let i = Number(number.value);
+			  let r = Number(radix.value);
+              
+			  output.innerHTML=nary(i,r);
+			  explain.innerHTML=convert_nary(i,r);
+			}
+
+
+
+			number.onclick = function() {
+			  number.select();
+			};
+
+			radix.onclick = function() {
+			  radix.select();
+			};
+
+            number.oninput = function() {
+                if (number.value<0) number.value=0;
+                update();
+            }
+
+			radix.oninput = function() {
+			  if (radix.value<2) radix.value=2;
+			  if (radix.value>16) radix.value=16;
+			  update();
+			}
+
+			function nary(i,radix) {
+			  if (i==0) return "0"
+			  const symbols=['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
+			  var nums = []
+			  while (i){
+					let r = i % radix
+					i =  Math.floor(i/radix)
+					nums.push(symbols[r])
+			  }
+			  return nums.reverse().join('')
+			}
+
+			function convert_nary(i,radix) {
+              if (i==0) return "Null ist Null."
+			  const symbols=['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
+			  var out = "";
+			  while (i){
+					let r = i % radix;
+					let i_new =  Math.floor(i/radix);
+					out+=`${i} : ${radix} = ${i_new}, Rest <span class="rest"> ${symbols[r]} </span> <br>`
+					i = i_new;
+			  }
+			  return out
+			}
+
+
+			update()
+
+
+		</script>
+</body>
+</html>

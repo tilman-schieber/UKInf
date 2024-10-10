@@ -13,19 +13,13 @@ link:     styles/main.css
 
 # Unterkurs Informatik
 
-
-<div class="center">
-![Unterkurs Informatik](img/unterkurs_logo.png)
-
 <!-- class="lead" -->
 Willkommen beim Unterkurs Informatik am Studienkolleg der Technischen Universität Berlin.
 
-</div>
-
 ---
-
 
 Grundlagen der Informatik
 =========================
 
 [preview-lia](1_Aussagenlogik.md)
+[preview-lia](2_Zahlensysteme.md)
