@@ -11,33 +11,6 @@ comment:  Positionssysteme, Binär-, Oktal- und Hexadezimalsystem
 link:     styles/main.css
 import:   ./macros.md
 
-
-@style
-
-.katex {
-    font-size: 1.1em;
-}
-
-table {
-  --color-border: 160, 160, 160; 
-  }
-
-.lia-table__sort {
-  display: none
-  }
-
-.lia-table-responsive.has-thead-sticky.has-first-col-sticky .lia-table__head th:first-child {
-  position: unset;
-}
-
-.lia-table-responsive.has-first-col-sticky .lia-table__data:first-child {
-  position: unset;
-}
-
-
-
-@end
-
 -->
 
 # Zahlensysteme
@@ -188,8 +161,35 @@ Welche dieser Zahlen stellen die Dezimalzahl 42 dar?
 
 ## In andere Zahlensysteme umrechnen
 
+Wir haben bereits gelernt, wie wir Zahlen anderer Zahlensysteme in das Zehnersystem umrechnen können. Für den umgekehrten Weg, eine Zahl $n$ aus dem Zehnersystem in ein System mit anderer Basis $b$ umzurechnen, nutzen wir folgenden Algorithmus[^1]:
+
+::: informatik-satz
+# Umrechnung der Zahl $n$ in eine Zahl der Basis $b$
+1. Teilen Sie $n$ ganzzahlig durch die Basis $b$. 
+2. Das Ergebnis ist der Quotient $q$ und der Rest $r$. Dieser Rest ist die nächste Ziffer des Ergebnisses, geschrieben von rechts nach links. Ist $q=0$ sind Sie fertig.
+3. Teilen Sie $q$ ganzzahlig durch $b$ und gehen Sie zu Schritt 2.
+
+:::
+
+
+Beispiel
+--------
+
+Rechnen wir 143 in eine Zahl mit Basis 8 um, gehen wir folgendermaßen vor:
+xxy
+1. $143 : 8 = 17 \text{, Rest } 7$ 
+2. $17 : 8 = 2 \text{, Rest } 1$ 
+3. $2 : 8 = 0 \text{, Rest } 2$ 
+4. Wir erhalten als Ergebnis der Umwandlung $217_8$
+
+
+
+Testen Sie den Algorithmus nun selbst:
+
 @[embed(style="height: 450px; width:450px; border: none")](html/2/zahlensysteme.html)
 
+
+[^1]: ein Algorithmus ist eine Schritt-für-Schritt-Anleitung zur Lösung eines Problems. Algorithmen sind in der Informatik von zentraler Bedeutung.
 
 ## Binärsystem
 
