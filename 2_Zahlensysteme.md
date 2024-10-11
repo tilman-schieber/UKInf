@@ -5,9 +5,9 @@ version:  1.0.4
 date:     2024
 language: de
 narrator: Deutsch Female
-logo:     img/1/aussagenlogik.png
+logo:     img/2/logo.png
 icon:     img/TU_Logo_kurz.svg
-comment:  Positionssysteme, Binär-, Oktal- und Hexadezimalsystem 
+comment:  Welche Arten gibt es Zahlen darzustellen? Was ist das Binärsystem und welche Bedeutung hat es für die Informatik?
 link:     styles/main.css
 import:   ./macros.md
 

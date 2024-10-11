@@ -5,7 +5,7 @@ version:  0.0.1
 date:     2024
 language: de
 narrator: Deutsch Female
-logo:     img/1/aussagenlogik.png
+logo:     img/3/logo.png
 icon:     img/TU_Logo_kurz.svg
 comment:  Ganze Zahlen, Kommazahlen und Text kodieren 
 link:     styles/main.css
