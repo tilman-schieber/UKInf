@@ -265,7 +265,7 @@ $0111_2$ ist dezimal: [[ 7 ]]\
 $0011_2$ ist dezimal: [[ 3 ]]\
 Die Summe der Binärzahlen ist also dezimal: [[ 10 ]]
 *************************
-Sie sehen das Ergebnis ist richtig. $7+3=10$.
+Sie sehen, das Ergebnis ist richtig: $7+3=10$.
 *************************
 
 </div>
