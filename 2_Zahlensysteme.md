@@ -163,20 +163,23 @@ Welche dieser Zahlen stellen die Dezimalzahl 42 dar?
 
 Wir haben bereits gelernt, wie wir Zahlen anderer Zahlensysteme in das Zehnersystem umrechnen können. Für den umgekehrten Weg, eine Zahl $n$ aus dem Zehnersystem in ein System mit anderer Basis $b$ umzurechnen, nutzen wir folgenden Algorithmus[^1]:
 
-::: informatik-satz
-# Umrechnung der Zahl $n$ in eine Zahl der Basis $b$
+
+<div class="alert definition">
+
+Umrechnung der Zahl $n$ in eine Zahl der Basis $b$
+---------------------------------------------------
+
 1. Teilen Sie $n$ ganzzahlig durch die Basis $b$. 
 2. Das Ergebnis ist der Quotient $q$ und der Rest $r$. Dieser Rest ist die nächste Ziffer des Ergebnisses, geschrieben von rechts nach links. Ist $q=0$ sind Sie fertig.
 3. Teilen Sie $q$ ganzzahlig durch $b$ und gehen Sie zu Schritt 2.
 
-:::
-
+</div>
 
 Beispiel
 --------
 
 Rechnen wir 143 in eine Zahl mit Basis 8 um, gehen wir folgendermaßen vor:
-xxy
+
 1. $143 : 8 = 17 \text{, Rest } 7$ 
 2. $17 : 8 = 2 \text{, Rest } 1$ 
 3. $2 : 8 = 0 \text{, Rest } 2$ 
@@ -464,6 +467,10 @@ Für die platzsparende Kodierung von Daten verwenden Informatiker sogar ein Syst
 
 ### Hexadezimalzahlen
 
+Jede Ziffer im Hexadezimalsystem entspricht genau vier Ziffern im Binärsystem. Da wir keine Ziffernsymbole für 10,11,12,13,14 und 15 haben, benutzen wir im Hexadezimalsystem die Buchstaben A,B,C,D,E,F[^1].
+
+Ähnlich wie bei den Oktalzahlen, können wir auch hier die Binärzahlen in Viererblöcke zerlegen und so leicht in Hexadezimalzahlen umwandeln (oder umgekehrt):
+
 <!-- style="max-width:770px"-->
 ```ascii
 
@@ -496,3 +503,16 @@ Hexadezimal-zu-Binär-Rechner
 @[embed(style="height: 190px; width:500px; border: none")](html/2/hex.html)
 
 </div>
+
+<div class="alert exercise">
+
+Übung
+------
+
+Wandeln Sie die Binärzahl `0010101000011010` in eine Hexadezimalzahl um:
+
+[[2A1A]]
+
+</div>
+
+[^1]: Manchmal werden auch die Kleinbuchstaben a,b,c,d,e,f verwendet.
