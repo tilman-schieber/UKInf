@@ -1,7 +1,7 @@
 <!--
 author:   Tilman Schieber
 email:    tilman.schieber@tu-berlin.de
-version:  1.0.4
+version:  1.0.5
 date:     2024
 language: de
 narrator: Deutsch Female
@@ -367,11 +367,6 @@ f)
 </div>
 
 
-### Binärmeister 
-*Sobald Sie starten, erscheinen immer mehr gelbe Bits auf der linken Seite. Sie können die Bits mit Klicken umschalten, so dass Sie der Zahl rechts davon entsprechen. Sobald sie eine Zeile gelöst haben, verschwindet sie. Bei 8 ungelösten Zeilen haben sie verloren!*
-@[embed(style="height: 800px; width:100%; border: none")](html/2/binaermeister.html)
-
-
 
 ## Oktal- und Hexadezimalsystem
 
@@ -450,11 +445,11 @@ $$
 Was ist der Wert der Zahl $2\text{A}_{12}$? (Basis 12)
 
 - [[ ]] 122
-- [[X]] 26
+- [[ ]] 26
 - [[ ]] 210
-- [[ ]] 32
+- [[X]] 34
 ***********************
-$$ 10 \cdot 12^1 + 2 \cdot 12^0 = 120 + 2 = 122 $$ 
+$$ 2 \cdot 12^1 + 10 \cdot 12^0 = 24 + 10 = 34 $$ 
 ***********************
 
 </div>
@@ -516,3 +511,11 @@ Wandeln Sie die Binärzahl `0010101000011010` in eine Hexadezimalzahl um:
 </div>
 
 [^1]: Manchmal werden auch die Kleinbuchstaben a,b,c,d,e,f verwendet.
+
+
+## Spiel: Binärmeister 
+
+Wie gut beherrschen Sie bereits die Binärzahlen? Testen Sie sich in diesem Spiel!
+
+*Sobald Sie starten, erscheinen immer mehr gelbe Bits auf der linken Seite. Sie können die Bits mit Klicken umschalten, so dass Sie der Zahl rechts davon entsprechen. Sobald sie eine Zeile gelöst haben, verschwindet sie. Bei 8 ungelösten Zeilen haben sie verloren!*
+@[embed(style="height: 800px; width:100%; border: none")](html/2/binaermeister.html)
