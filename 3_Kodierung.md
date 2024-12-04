@@ -320,6 +320,43 @@ $$
 Das bedeutet, auch rationale Zahlen mit Nachkommastellen können als Binärzahl gespeichert werden. Man muss aber ebenfalls die Information speichern, an welcher Stelle das Komma steht.
 In der Informatik wird dafür eine besonders platzsparende und flexible Lösung verwendet, die *Fließkommazahlen*.
 
+<div class="alert exercise">
+
+Aufgabe 1
+----------
+
+Wie stellt man den Dezimalbruch $3,\negthinspace75$ als Binärzahl dar?
+
+- [(X)] `11,11`
+- [( )] `11,101`
+- [( )] `1,11`
+*************************
+
+$3,\negthinspace75$ entspricht $2^1+2^0+2^{-1}+2^{-2}=2+1+0,\negthinspace5+0,\negthinspace25=3,\negthinspace75$
+
+*************************
+
+</div>
+
+<div class="alert exercise">
+
+Aufgabe 2
+----------
+
+Welchem Wert entspricht der binäre Bruch `0.0101`?
+
+- [( )] $0,\negthinspace75$
+- [( )] $0,\negthinspace25$
+- [(X)] $0,\negthinspace3125$
+*************************
+
+$0,\negthinspace3125$ entspricht $2^{-2}+2^{-4}=0,\negthinspace25+0,\negthinspace0625=0,\negthinspace3125$
+
+*************************
+
+</div>
+
+
 ### Fließkommazahlen
 
 Fließkommazahlen basieren auf dem Prinzip der wissenschaftlichen Notation. Das ist eine Methode, besonders kleine oder große Zahlen zu notieren.
@@ -338,9 +375,9 @@ $$
 6,\negthinspace02214076 \cdot 10^{23}
 $$
 
+Das Video zeigt, wie man durch Verschieben des Kommas zu dieser Schreibweise kommt:
 
-
-<video controls width="450" height="100">
+<video controls width="450" height="200">
     <source src="img/3/fliesskomma1.mp4" type="video/mp4">
 </video>
 
@@ -357,7 +394,9 @@ $$
 $$
 Gramm.
 
-<video controls width="640" height="100">
+Das Video zeigt, wie das funktioniert: 
+
+<video controls width="640" height="200">
     <source src="img/3/fliesskomma2.mp4" type="video/mp4">
 </video>
 
@@ -371,7 +410,7 @@ $$
 
 Die Mantisse hat stets genau eine Zahl vor dem Komma.
 
-Computer verwenden bei Fließkommazahlen die Basis 2 und speichern auch die Mantisse und den Exponenten als Binärzahlen. Die gebräuchlichsten Formate sind die 32-Bit Fließkommazahl und die 64-<nolink>Bit</nolink> <nolink>Fließkommazahl</nolink>.
+Computer verwenden bei Fließkommazahlen die Basis 2 und speichern auch die Mantisse und den Exponenten als Binärzahlen. Die gebräuchlichsten Formate sind die 32-Bit Fließkommazahl und die 64-Bit Fließkommazahl.
 
 Bei den inzwischen überwiegend gebrauchten 64-Bit Fließkommazahlen werden 
 
@@ -379,8 +418,24 @@ Bei den inzwischen überwiegend gebrauchten 64-Bit Fließkommazahlen werden
 * 11 Bit für den Exponenten und
 * 52 Bit für die Mantisse verwendet.
 
-
 So lassen sich nicht nur Zahlen mit Nachkommastellen darstellen, sondern auch sehr kleine (bis zur Größenordnung $10^{-308}$ ) und sehr große Zahlen (bis zur Größenordnung $10^{308}$ ). 
-Um diesen großen Zahlenbereich abzudecken, muss man Kompromisse bei der Genauigkeit hinnehmen. Selbst bei einfachen Rechenvorgängen mit Fließkommazahlen kann es zu Ungenauigkeiten und damit zu Fehlern im Erg
+Um diesen großen Zahlenbereich abzudecken, muss man Kompromisse bei der Genauigkeit hinnehmen. Selbst bei einfachen Rechenvorgängen mit Fließkommazahlen kann es zu Ungenauigkeiten und damit zu Fehlern im Ergebnis kommen.
+
+
+
+<div class="alert exercise">
+
+Aufgabe
+--------
+
+Welche der folgenden Aussage über Fließkommazahlen sind korrekt?
+- [[X]] Fließkommazahlen basieren auf dem Prinzip der wissenschaftlichen Notation.
+- [[X]] Fließkommazahlen bestehen aus einem Vorzeichen, einem Exponenten und einer Mantisse.
+- [[ ]] Fließkommazahlen haben eine feste Anzahl an Nachkommastellen.
+- [[X]] Fließkommazahlen können zu Ungenauigkeiten führen.
+- [[ ]] Fließkommazahlen haben eine feste Anzahl an Vorkommastellen.
+- [[ ]] Fließkommazahlen können nur positive Zahlen darstellen.
+
+</div>
 
 ## Text
