@@ -24,3 +24,5 @@ Grundlagen der Informatik
 [preview-lia](1_Aussagenlogik.md)
 
 [preview-lia](2_Zahlensysteme.md)
+
+[preview-lia](3_Kodierung.md)
