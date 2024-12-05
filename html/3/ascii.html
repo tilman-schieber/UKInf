@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Tabelle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(16, 40px);
+            grid-gap: 5px;
+            margin-bottom: 20px;
+        }
+        .cell {
+            border: 1px solid #ddd;
+            padding: 5px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 2em;
+        }
+        .cell:hover {
+            background-color: #ff4d84;
+        }
+        #binaryDisplay {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        #explanation {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid" id="asciiGrid"></div>
+    <div id="binaryDisplay">Binär: </div>
+    <div id="explanation">Erklärung: </div>
+
+    <script>
+        const asciiGrid = document.getElementById('asciiGrid');
+        const binaryDisplay = document.getElementById('binaryDisplay');
+        const explanation = document.getElementById('explanation');
+
+        const specialChars = {
+            0: '␀', // NUL (Null)
+            1: '␁', // SOH (Start of Heading)
+            2: '␂', // STX (Start of Text)
+            3: '␃', // ETX (End of Text)
+            4: '␄', // EOT (End of Transmission)
+            5: '␅', // ENQ (Enquiry)
+            6: '␆', // ACK (Acknowledge)
+            7: '🔔', // BEL (Bell)
+            8: '⌫', // BS (Backspace)
+            9: '⇥', // TAB (Horizontal Tab)
+            10: '↵', // LF (Line Feed)
+            11: '⭾', // VT (Vertical Tab)
+            12: '↡', // FF (Form Feed)
+            13: '⏎', // CR (Carriage Return)
+            14: '⇵', // SO (Shift Out)
+            15: '⇳', // SI (Shift In)
+            16: '␐', // DLE (Data Link Escape)
+            17: '␑', // DC1 (Device Control 1)
+            18: '␒', // DC2 (Device Control 2)
+            19: '␓', // DC3 (Device Control 3)
+            20: '␔', // DC4 (Device Control 4)
+            21: '␕', // NAK (Negative Acknowledge)
+            22: '␖', // SYN (Synchronous Idle)
+            23: '␗', // ETB (End of Transmission Block)
+            24: '␘', // CAN (Cancel)
+            25: '␙', // EM (End of Medium)
+            26: '␚', // SUB (Substitute)
+            27: '␛', // ESC (Escape)
+            28: '␜', // FS (File Separator)
+            29: '␝', // GS (Group Separator)
+            30: '␞', // RS (Record Separator)
+            31: '␟', // US (Unit Separator)
+            32: '␠' // SPACE (Blank Space)
+        };
+
+        function toBinary(value) {
+            return value.toString(2).padStart(8, '0');
+        }
+
+        function getExplanation(value) {
+            if (specialChars[value]) {
+                switch (value) {
+                    case 0: return 'NUL (Null): Kein Zeichen.';
+                    case 1: return 'SOH (Start of Heading): Beginn einer Überschrift.';
+                    case 2: return 'STX (Start of Text): Beginn eines Textes.';
+                    case 3: return 'ETX (End of Text): Ende eines Textes.';
+                    case 4: return 'EOT (End of Transmission): Ende der Übertragung.';
+                    case 5: return 'ENQ (Enquiry): Anfrage nach einer Antwort von einer entfernten Station.';
+                    case 6: return 'ACK (Acknowledge): Empfangsbestätigung.';
+                    case 7: return 'BEL (Bell): Klingelton oder Warnung.';
+                    case 8: return 'BS (Backspace): Bewegt den Cursor um eine Position zurück.';
+                    case 9: return 'TAB (Horizontal Tab): Bewegt den Cursor zur nächsten Tab-Position.';
+                    case 10: return 'LF (Line Feed): Bewegt den Cursor zur nächsten Zeile.';
+                    case 11: return 'VT (Vertical Tab): Bewegt den Cursor zur nächsten vertikalen Tab-Position.';
+                    case 12: return 'FF (Form Feed): Bewegt den Drucker zum Anfang der nächsten Seite.';
+                    case 13: return 'CR (Carriage Return): Bewegt den Cursor zum Anfang der Zeile.';
+                    case 14: return 'SO (Shift Out): Wechsel zu einem alternativen Zeichensatz.';
+                    case 15: return 'SI (Shift In): Rückkehr zum Standardzeichensatz.';
+                    case 16: return 'DLE (Data Link Escape): Ändert die Bedeutung der folgenden Zeichen.';
+                    case 17: return 'DC1 (Device Control 1): Häufig für Flusskontrolle (XON) verwendet.';
+                    case 18: return 'DC2 (Device Control 2): Gerät-spezifisches Steuerzeichen.';
+                    case 19: return 'DC3 (Device Control 3): Häufig für Flusskontrolle (XOFF) verwendet.';
+                    case 20: return 'DC4 (Device Control 4): Gerät-spezifisches Steuerzeichen.';
+                    case 21: return 'NAK (Negative Acknowledge): Negative Empfangsbestätigung.';
+                    case 22: return 'SYN (Synchronous Idle): Wird zur Synchronisation verwendet.';
+                    case 23: return 'ETB (End of Transmission Block): Ende eines Datenblocks.';
+                    case 24: return 'CAN (Cancel): Vorherige Daten sollten ignoriert werden.';
+                    case 25: return 'EM (End of Medium): Ende eines Speichermediums.';
+                    case 26: return 'SUB (Substitute): Ersetzt ein ungültiges Zeichen.';
+                    case 27: return 'ESC (Escape): Einleitung einer Escape-Sequenz.';
+                    case 28: return 'FS (File Separator): Trennt Dateien.';
+                    case 29: return 'GS (Group Separator): Trennt Daten-Gruppen.';
+                    case 30: return 'RS (Record Separator): Trennt Datensätze.';
+                    case 31: return 'US (Unit Separator): Trennt Daten-Einheiten.';
+                    case 32: return 'SPACE: Stellt ein Leerzeichen dar.';
+                    default: return 'Sonderzeichen im ASCII Code.';
+                }
+            } else {
+                return 'Druckbares ASCII-Zeichen.';
+            }
+        }
+
+        for (let i = 0; i < 128; i++) {
+            const cell = document.createElement('div');
+            cell.className = 'cell';
+            cell.textContent = specialChars[i] || String.fromCharCode(i);
+            cell.dataset.value = i;
+
+            cell.addEventListener('mouseover', () => {
+                binaryDisplay.textContent = 'Binär: ' + toBinary(i) + ' | Dezimal: ' + i;
+                explanation.textContent = 'Erklärung: ' + getExplanation(i);
+            });
+
+            asciiGrid.appendChild(cell);
+        }
+    </script>
+</body>
+</html>

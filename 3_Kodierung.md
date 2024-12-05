@@ -1,7 +1,7 @@
 <!--
 author:   Tilman Schieber
 email:    tilman.schieber@tu-berlin.de
-version:  0.0.1
+version:  1.0.0
 date:     2024
 language: de
 narrator: Deutsch Female
@@ -438,4 +438,40 @@ Welche der folgenden Aussage über Fließkommazahlen sind korrekt?
 
 </div>
 
-## Text
+## Textkodierung
+
+Sie haben nun gesehen wie wir verschiedene Arten von Zahlen in einem Computer speichern können. 
+Ein logischer nächster Schritt, ist es menschliche Sprache -- also Texte -- in einem Computer speichern zu können. Indem wir Buchstaben, Zahlen und Sonderzeichen durchnummerieren und diese Nummern binär kodieren, ist das problemlos möglich.
+
+Eine der ersten Kodierungen für Texte war die ASCII-Kodierung. ASCII steht für *American Standard Code for Information Interchange*.
+
+ASCII kodiert $2^7=128$ Symbole in $7$ Bit. Die ersten $32$ Symbole sind Steuerzeichen[^1], wie zum Beispiel der Zeilenumbruch oder der Tabulator. Die restlichen $96$ Symbole sind Buchstaben, Zahlen und Sonderzeichen.
+
+@[embed(style="height: 450px; width:500px; border: none")](html/3/ascii.html)
+
+ASCII hat mit nur $128$ Symbolen seine Grenzen und ist auf das englische Alphabet beschränkt.
+Die inzwischen universell verwendete Kodierung für Texte ist Unicode[^2]. Unicode ist ein Kodierungsstandard, der es ermöglicht, Texte in fast allen Schriftsystemen der Welt darzustellen.
+Es gibt verschiedene Varianten von Unicode, die bekannteste ist UTF-8. Ein Zeichen wird mit 1 bis 4 Byte kodiert[^2]. In der folgenden Tabelle sehen Sie einige Beispiele:
+
+<!-- data-type="none" -->
+| Symbol | Hexadezimal | Binäre Kodierung             | Erklärung                          |
+|--------|-------------|------------------------------|-------------------------------------|
+| A      | 0041        | 01000001                     | Englischer Buchstabe, wie ASCII    |
+| ä      | 00E4        | 11000011 10100100           | Deutscher Umlaut                    |
+| ñ      | 00F1        | 11000011 10110001           | Spanischer Buchstabe               |
+| π      | 03C0        | 11001111 10110000           | Griechischer Buchstabe, Pi         |
+| Я      | 042F        | 11010000 10101011           | Russischer Buchstabe               |
+| ॐ      | 0950        | 11100001 10100101 10010000  | Sanskrit-Symbol für Frieden        |
+| ∞      | 221E        | 11100010 10001000 10011110  | Mathematisches Symbol für Unendlichkeit |
+| ♠      | 2660        | 11100010 10011000 10100000  | Spielkarten-Symbol: Pik            |
+| さ      | 3055        | 11100011 10000010 10010101  | Japanischer Buchstabe             |
+| 中     | 4E2D        | 11100100 10111010 10101101  | Chinesisches Zeichen für „Mitte“   |
+| 😊     | 1F60A       | 11110000 10011111 10011000 10101010 | Emoji für Lächeln             |
+| 🐉     | 1F409       | 11110000 10011111 10010000 10001001 | Emoji für einen Drachen           |
+| 𒀀    | 12000       | 11110000 10100100 10000000 10000000 | Sumerische Keilschrift              |
+| 𓀀    | 13000       | 11110000 10110000 10000000 10000000 | Ägyptisches Hieroglyphen-Zeichen   |
+
+
+[^1]: Viele der ASCII Steuerzeichen kommen aus einer Zeit in der Computer noch mit Lochkarten und Lochbändern arbeiteten. Sie wurden verwendet um den Drucker oder das Terminal zu steuern. Lassen sie sich also nicht von den seltsamen Namen irritieren.
+
+[^2]: UTF-8 ist abwärtskompatibel mit ASCII, das bedeutet, dass die ersten $128$ Zeichen von UTF-8 genau so kodiert sind wie in ASCII. Das macht es einfach, Texte in ASCII in UTF-8 zu konvertieren.
