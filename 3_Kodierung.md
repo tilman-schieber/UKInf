@@ -499,6 +499,37 @@ Töne und Musik können als *waveform* (deutsch auch "Wellenform") dargestellt w
 
 Je nach Qualität und Länge einer Tonaufnahme können sehr große Datenmengen entstehen. Auch hier werden häufig Verfahren zur **Kompression** eingesetzt, um die benötigte Datenmenge zu reduzieren. Eine verbreitete Methode ist die **verlustbehaftete Kompression**, bei der weniger wahrnehmbare Informationen entfernt werden, wie es beispielsweise beim MP3-Format der Fall ist.
 
+<div class="alert exercise">
+
+Aufgabe
+-------
+
+Eine unkomprimierte Stereo-Audiodatei wird mit einer Abtastrate von 44,1 kHz und einer Bittiefe von 16 Bit aufgenommen. Die Aufnahme dauert 5 Minuten. Wie groß ist die resultierende Datei? 
+
+**Lösungsschritte:**  
+
+1. **Abtastrate (Hz)** = 44.100  
+2. **Bittiefe (Bit)** = 16  
+3. **Kanäle** = 2 (Stereo)  
+4. **Dauer (Sekunden)** = 5 Minuten × 60 = 300 Sekunden  
+
+Die Dateigröße in Bytes erhalten Sie dann durch die folgende Formel:  
+$$ \text{Größe} = \text{Abtastrate} \times \text{Bittiefe} \times \text{Kanäle} \times \text{Dauer (s)} \div 8 $$
+
+- [( )] 16.644.096 Bytes  
+- [( )] 27.136.512 Bytes  
+- [(X)] 52.920.000 Bytes  
+- [( )] 108.324.864 Bytes  
+*************************
+
+\[
+\text{Dateigröße (Bytes)} = 44.100 \times 16 \times 2 \times 300 \div 8 = 52.920.000 
+\]
+
+*************************
+
+
+</div>
 
 ### Videos
 
