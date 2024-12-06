@@ -478,6 +478,10 @@ Es gibt verschiedene Varianten von Unicode, die bekannteste ist UTF-8. Ein Zeich
 
 ## Bilder, Töne, Videos
 
+Bilder
+------
+
+
 Aus den Grundbausteinen, die sie nun bereits kodieren können, lassen sich nun mit einigen Strategien und Ideen fast beliebig komplexe Daten kodieren.
 
 Wollen wir beispielsweise ein Bild kodieren, so können wir es in ein Raster von Bildpunkten (oder auch *Pixel*) zerlegen. Dessen Farbe kann dann als Kombination von Rot, Grün und Blau gespeichert werden. 
@@ -485,18 +489,19 @@ Die Intensität der jeweiligen Farbe wird in der Regel als einfache Zahl zwische
 
 > Bewegen Sie die Maus über dieses Bild, um die Zahlenwerte der jeweiligen Bildpunkte *(Pixel)* zu sehen:
 
-@[embed(style="height: 800px; width:800px; border: none")](html/3/pixelexplorer.html)
+@[embed(style="height: 500px; width:700px; border: none")](html/3/pixelexplorer.html)
 
-Töne und Musik
---------------
+### Töne und Musik
+
+@[embed(style="height: 320px; width:700px; border: none")](html/3/soundwave.html)
+
 
 Töne und Musik können als Wellenformen dargestellt werden. Die Amplitude der Welle wird in regelmäßigen Abständen abgetastet und als Zahl gespeichert. Diese Methode wird als Abtastung oder auch *Sampling* bezeichnet. Je höher die Abtastrate, desto genauer wird der Ton erfasst. Bei der CD-Qualität beträgt die Abtastrate beispielsweise 44.100 Mal pro Sekunde (44,1 kHz), was bedeutet, dass der Ton 44.100 Mal in der Sekunde gemessen wird. Jede dieser Messungen wird als Zahl gespeichert und repräsentiert die Höhe (Amplitude) der Schallwelle zu diesem Zeitpunkt. Zusätzlich wird für jede Messung eine Bittiefe angegeben, welche die Genauigkeit der Messung bestimmt. Bei einer Bittiefe von 16 Bit, wie es bei CDs üblich ist, stehen 65.536 verschiedene Werte zur Verfügung, um die Amplitude darzustellen.
 
 Je nach Qualität und Länge einer Tonaufnahme können sehr große Datenmengen entstehen. Auch hier werden häufig Verfahren zur **Kompression** eingesetzt, um die benötigte Datenmenge zu reduzieren. Eine verbreitete Methode ist die **verlustbehaftete Kompression**, bei der weniger wahrnehmbare Informationen entfernt werden, wie es beispielsweise beim MP3-Format der Fall ist.
 
 
-Videos
-------
+### Videos
 
 Videos sind eine Kombination aus Bild und Ton. Ein Video besteht aus einer Abfolge von Einzelbildern (sogenannten *Frames*), die schnell genug hintereinander abgespielt werden, um eine flüssige Bewegung zu erzeugen. Üblicherweise werden pro Sekunde 24 bis 60 Bilder angezeigt, je nach Anwendungsbereich und Qualitätsanforderung. Diese Bildfolge wird mit Ton kombiniert.
 
