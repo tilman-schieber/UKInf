@@ -159,6 +159,12 @@ Welche dieser Zahlen stellen die Dezimalzahl 42 dar?
 *************************
 </div>
 
+### Spiel: Paare finden
+
+> Unter diesen neun Zahlen in verschiedenen Zahlensystemen finden sich vier Paare. Finden Sie diese, indem Sie auf die Zahlen klicken!
+
+@[embed(style="height: 500px; width:500px; border: none")](html/2/zahlenpaare.html)
+
 ## In andere Zahlensysteme umrechnen
 
 Wir haben bereits gelernt, wie wir Zahlen anderer Zahlensysteme in das Zehnersystem umrechnen können. Für den umgekehrten Weg, eine Zahl $n$ aus dem Zehnersystem in ein System mit anderer Basis $b$ umzurechnen, nutzen wir folgenden Algorithmus[^1]:

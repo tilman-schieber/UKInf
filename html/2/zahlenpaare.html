@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farb-Paarspiel</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      gap: 10px;
+      justify-content: center;
+      margin-top: 50px;
+    }
+    .cell {
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #ccc;
+      font-size: 24px;
+      background-color: #f9f9f9;
+      position: relative;
+      cursor: pointer;
+      flex-direction: column;
+    }
+    .cell .base {
+      font-size: 12px;
+      color: black;
+    }
+    .highlight-farbe1 { background-color: #00a0a2; }
+    .highlight-farbe2 { background-color: #e2b847; }
+    .highlight-farbe3 { background-color: #F08080; }
+    .highlight-farbe4 { background-color: #9d6498; }
+    .highlight-farbe5 { background-color: #d3d3d3; }
+
+    #final-message {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #333;
+      display: none;
+    }
+    #restart-button {
+      display: none;
+      margin: 20px auto 0;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      background-color: #e2b847;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    #restart-button:hover {
+      background-color: #c69e36;
+    }
+    .button-container {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid" id="grid"></div>
+  <div id="final-message">Alle Paare gefunden!</div>
+  <div class="button-container">
+    <button id="restart-button">Neustart</button>
+  </div>
+  <script>
+    const grid = document.getElementById('grid');
+    const finalMessage = document.getElementById('final-message');
+    const restartButton = document.getElementById('restart-button');
+    let firstSelected = null;
+    let colors = ["highlight-farbe1", "highlight-farbe2", "highlight-farbe3", "highlight-farbe4", "highlight-farbe5"];
+    let colorIndex = 0;
+    let pairsFound = 0;
+
+    function generateNumbers() {
+      const numbers = [];
+      const bases = [2, 8, 16];
+      const uniqueNumbers = new Set();
+      while (uniqueNumbers.size < 4) {
+        uniqueNumbers.add(Math.floor(Math.random() * 20) + 3);
+      }
+
+      const uniqueArray = Array.from(uniqueNumbers);
+      uniqueArray.forEach(num => {
+        let base1 = bases[Math.floor(Math.random() * bases.length)];
+        let base2;
+        do {
+          base2 = bases[Math.floor(Math.random() * bases.length)];
+        } while (base1 === base2);
+
+        numbers.push({ num, base: base1 }, { num, base: base2 });
+      });
+
+      let nonMatchingNumber;
+      do {
+        nonMatchingNumber = Math.floor(Math.random() * 20) + 3;
+      } while (uniqueNumbers.has(nonMatchingNumber));
+
+      const nonMatchingBase = bases[Math.floor(Math.random() * bases.length)];
+      numbers.push({ num: nonMatchingNumber, base: nonMatchingBase });
+
+      return numbers.sort(() => Math.random() - 0.5);
+    }
+
+    function createCell(data, index) {
+      const cell = document.createElement('div');
+      cell.className = 'cell';
+      cell.dataset.index = index;
+      cell.dataset.number = data.num;
+      cell.dataset.base = data.base;
+
+      const numberDisplay = parseInt(data.num).toString(data.base).toUpperCase();
+      cell.innerHTML = `<span>${numberDisplay}<sub class="base">${data.base}</sub></span>`;
+
+      grid.appendChild(cell);
+      cell.addEventListener('click', () => handleCellClick(cell));
+    }
+
+    function handleCellClick(cell) {
+      if (!firstSelected) {
+        firstSelected = cell;
+        cell.classList.add(colors[colorIndex]);
+      } else if (cell !== firstSelected && cell.dataset.number === firstSelected.dataset.number) {
+        cell.classList.add(colors[colorIndex]);
+        colorIndex = (colorIndex + 1) % colors.length;
+        pairsFound++;
+        firstSelected = null;
+
+        if (pairsFound === 4) {
+          endGame();
+        }
+      } else {
+        const previous = firstSelected;
+        firstSelected = null;
+        setTimeout(() => {
+          previous.classList.remove(colors[colorIndex]);
+        }, 500);
+      }
+    }
+
+    function endGame() {
+      finalMessage.style.display = 'block';
+      restartButton.style.display = 'block';
+      const unmatchedCell = Array.from(document.querySelectorAll('.cell')).find(cell => !cell.classList.contains(colors[0]) && !cell.classList.contains(colors[1]) && !cell.classList.contains(colors[2]) && !cell.classList.contains(colors[3]));
+      if (unmatchedCell) {
+        unmatchedCell.classList.add("highlight-farbe5");
+      }
+    }
+
+    function restartGame() {
+      grid.innerHTML = '';
+      finalMessage.style.display = 'none';
+      restartButton.style.display = 'none';
+      firstSelected = null;
+      colorIndex = 0;
+      pairsFound = 0;
+      initGame();
+    }
+
+    function initGame() {
+      const numbers = generateNumbers();
+      numbers.forEach((data, idx) => createCell(data, idx));
+    }
+
+    restartButton.addEventListener('click', restartGame);
+    initGame();
+  </script>
+</body>
+</html>
