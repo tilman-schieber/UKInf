@@ -7,7 +7,7 @@ language: de
 narrator: Deutsch Female
 logo:     img/3/logo.png
 icon:     img/TU_Logo_kurz.svg
-comment:  Ganze Zahlen, Kommazahlen und Text kodieren 
+comment:  Ein Computer muss alles binär, also nur als Nullen und Einsen speichern. Wie können wir so Zahlen, Texte und sogar Bilder darstellen?
 link:     styles/main.css
 import:   ./macros.md
 
@@ -28,6 +28,8 @@ In diesem Kapitel lernen wir, wie wir Daten in einem Computer digital kodieren k
 </div>
 </div>
 
+<!-- class="context"-->
+Für einen Gesamtüberblick über den Kurs geht es @[lialink(hier zurück zur Kursübersicht)](0_Inhalt.md).
 
 ## Bits und Bytes
 
@@ -537,3 +539,24 @@ Videos sind eine Kombination aus Bild und Ton. Ein Video besteht aus einer Abfol
 
 Bei Videos fallen daher enorme Datenmengen an, insbesondere wenn sowohl die Einzelbilder als auch das Audiosignal in hoher Qualität vorliegen. In der Praxis kommen deshalb spezielle Kompressionsverfahren zum Einsatz. So wird die Dateigröße verringert, oft ohne die wahrgenommene Qualität merklich zu beeinträchtigen.
 
+<div class="alert example">
+
+Beispiel
+--------
+
+Ein HD-Video hat eine Auflösung von 1920 x 1080. Um die Farbwerte für Rot, Grün und Blau zu speichern benötigt jeder Pixel 3 Byte.
+Jeder *frame* des Videos benötigt also unkomprimiert
+
+$$
+1920 \cdot 1080 \cdot 3 \; \text{bytes} = 6\,220\,800 \; \text{bytes}
+$$
+
+Eine Minute Video bei 30 fps (*frames* pro Sekunde) benötigt also
+
+$$
+6\,220\,800 \; \text{bytes} \cdot 30 \cdot 60 = 11\,197\,440\,000\; \text{bytes}
+$$
+
+Damit benötigt nur eine Minute Video schon über 11 Gigabyte. Dank moderner Kompressionsalgorithmen benötigt eine Minute Video in hoher Qualität (HD) auf Youtube benötigt aber nur ca. 60 Megabyte.
+
+</div>
