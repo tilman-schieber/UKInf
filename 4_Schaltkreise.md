@@ -60,10 +60,6 @@ Für einen Gesamtüberblick über den Kurs geht es @[lialink(hier zurück zur Ku
 
 
 <div class="flex-container">
-<div class="flex-child">
-![George Boole](img/4/boole.jpg)
-
-</div>
 <div class="flex-child-2">
 
 Den Begriff der Algebra kennen Sie sicherlich aus der Mathematik. Er beschreibt einen Satz von Regeln, mit dem man Berechnungen durchführen kann. So erklärt die elementare Algebra, wie wir Zahlen addieren, multiplizieren, substrahieren und dividieren können. Sie verwendet Variablen und erlaubt uns Gleichungen und Ungleichungen aufzustellen. Dabei legt sie fest, welche Regeln man dabei beachten muss.
@@ -72,15 +68,20 @@ Die boolesche Algebra hat ihren Namen von George Boole, der sie 1847 in seinem B
 
 Sie ist eine besondere Form der Algebra, die Regeln beschreibt, wie man mit Wahrheitswerten rechnen kann.
 
-</div>
-</div>
-
 So wie in der elementaren Algebra verwendet man in der booleschen Algebra Variablen, nennt diese aber boolesche Variablen. Sie können nur die  Wahrheitswerte *wahr* und *falsch* annehmen.  
 Diese zwei Werte *wahr* und *falsch* schreibt man auf englisch *true* und *false* oder verwendet die Ziffern $1$ und $0$.  
 Hier wird deutlich, warum die boolesche Algebra so interessant für die Informatik ist: Da man 1 und 0 verwendet, um digitale Daten zu repräsentieren, erlaubt uns diese Algebra Berechnungen auf diesen Daten zu definieren.  
 Für diese Berechnungen verwendet man die Operationen oder Verknüpfungen der booleschen Algebra: `UND`, `ODER`, und `NICHT`.
 
 Diese kennen Sie bereits von den Grundlagen der Aussagenlogik im @[lialink(ersten Kurskapitel)](1_Aussagenlogik.md)
+
+</div>
+
+<div class="flex-child">
+![George Boole](img/4/boole.jpg "George Boole (1815-1864)")
+
+</div>
+</div>
 
 ### Boolesche Funktionen
 
