@@ -25,6 +25,7 @@ s {
 
 table {
   --color-border: 160, 160, 160; 
+  width: auto !important;
   }
 
 .lia-table__sort {
@@ -308,7 +309,7 @@ Für jede mögliche Kombination von Wahrheitswerten der aussagenlogischen Variab
 Am einfachsten ist das bei der Negation, die nur von einer Aussage abhängt.\
 Da eine Aussage entweder wahr ($1$) oder falsch($0$) ist, hat die Wahrheitstabelle für $\neg A$ zwei Zeilen und sieht so aus:
 
-<!-- data-type="none" class="w-30"-->
+<!-- data-type="none" -->
 | $A$  |  $\neg A$ |
 |:----:|:---------:|
 |   0  | 1         |
@@ -317,7 +318,7 @@ Da eine Aussage entweder wahr ($1$) oder falsch($0$) ist, hat die Wahrheitstabel
 ### UND
 Die Wahrheitstabelle für die UND-Verknüpfung hat vier Zeilen, da es vier mögliche Kombinationen von Wahrheitswerten für zwei Aussagen gibt. Wie Sie bereits wissen, ist die UND-Verknüpfung nur wahr, wenn beide Aussagen wahr sind:
 
-<!-- data-type="none" class="w-30"-->
+<!-- data-type="none" -->
 | $A$  |  $B$ | $A \land B$ |
 |:----:|:----:|:-----------:|
 |   0  | 0    | 0           |
@@ -336,7 +337,7 @@ Die Wahrheitstabelle für die UND-Verknüpfung hat vier Zeilen, da es vier mögl
 
 Können Sie die Wahrheitstabelle für die ODER-Verknüpfung $A \lor B$ selbst vervollständigen?
 
-<!-- data-type="none" class="w-30"-->
+<!-- data-type="none" -->
 | $A$  |  $B$ | $A \lor B$ |
 |:----:|:----:|:-----------:|
 |   0  | 0    | [[0]]       |
@@ -352,7 +353,7 @@ ODER ist wahr wenn mindestens eine Variable wahr ist.
 ### WENN-DANN
 Die WENN-DANN-Verknüpfung haben wir bereits beschrieben: Wenn die erste Aussage wahr ist, so muss auch die zweite Aussage wahr sein. Ist die erste Aussage nicht wahr, so ist die Verknüpfung unabhängig vom Wahrheitswert der zweiten Aussage wahr:
 
-<!-- data-type="none" class="w-30"-->
+<!-- data-type="none" -->
 | $A$  |  $B$ | $A \rightarrow B$ |
 |:----:|:----:|:-----------------:|
 |   0  | 0    | 1                 |
@@ -377,7 +378,7 @@ Welcher Ausdruck ist äquivalent zu $A \rightarrow B$?
 $\lnot A \lor B$ ist richtig. Beweisen kann man das mit einer Wahrheitstabelle.
 Wir notieren zunächst die Negation $\lnot A$ und verODERN diese mit B.
 
-<!-- data-type="none" class="w-30"-->
+<!-- data-type="none" -->
 | $A$  |  $B$ | $\neg A$ |$\lnot A \lor B$ |
 |:----:|:----:|:--------:|:--------------:|
 |   0  | 0    | 1        |   1            |
@@ -395,7 +396,7 @@ GENAU-DANN-WENN (auch *Biimplikation* oder *Äquivalenz*) ist wahr, wenn beide A
 zum Beispiel: "Wasser ist **genau dann** gefroren **wenn** es unter 0°C ist"
 Für diese Verknüpfung wird der Doppelpfeil $\leftrightarrow$ verwendet.
 
-<!-- data-type="none" class="w-30"-->
+<!-- data-type="none" -->
 | $A$  |  $B$ | $A \leftrightarrow B$ |
 |:----:|:----:|:-----------------:|
 |   0  | 0    | 1                 |

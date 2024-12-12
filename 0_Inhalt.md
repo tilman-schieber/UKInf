@@ -26,3 +26,5 @@ Grundlagen der Informatik
 [preview-lia](2_Zahlensysteme.md)
 
 [preview-lia](3_Kodierung.md)
+
+[preview-lia](4_Schaltkreise.md)
