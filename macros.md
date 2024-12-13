@@ -1,19 +1,24 @@
 <!--
 author:   Tilman Schieber
 email:    tilman.schieber@tu-berlin.de
-
+link:     styles/main.css
 
 @pyconsole 
 <a target="_blank" role="button" href="https://tilman-schieber.github.io/console"><button class="lia-btn lia-btn--outline">Python Konsole</button></a>
 @end
 
+@example: <div class="alert example">
+@exercise: <div class="alert exercise">
+@definition: <div class="alert definition">
+@summary: <div class="alert summary">
+@tip: <div class="alert tip">
+@close: </div>
 
 @lialink
 <script modify="false" run-once="true">
 `LIASCRIPT: [@0](${window.location.origin + window.location.pathname}?@1)`
 </script>
 @end
-
 
 @embed
 <script run-once modify="false">
@@ -61,3 +66,4 @@ Example:
 ## Embed
 
 `@[embed(style="height: 400px; width:600px; border: none")](html/5/listslicer.html)`
+
