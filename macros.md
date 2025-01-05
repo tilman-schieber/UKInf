@@ -7,13 +7,6 @@ link:     styles/main.css
 <a target="_blank" role="button" href="https://tilman-schieber.github.io/console"><button class="lia-btn lia-btn--outline">Python Konsole</button></a>
 @end
 
-@example: <div class="alert example">
-@exercise: <div class="alert exercise">
-@definition: <div class="alert definition">
-@summary: <div class="alert summary">
-@tip: <div class="alert tip">
-@close: </div>
-
 @lialink
 <script modify="false" run-once="true">
 `LIASCRIPT: [@0](${window.location.origin + window.location.pathname}?@1)`
